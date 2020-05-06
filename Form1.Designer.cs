@@ -31,7 +31,7 @@ namespace wodomierz
         public void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button1 = new System.Windows.Forms.Button();
             this.haslo = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -41,6 +41,12 @@ namespace wodomierz
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.grupaDodajKlient = new System.Windows.Forms.GroupBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.poleTelefonDodajKlient = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.poleNazwaFirmyDodajKlient = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.poleKodDodajKlient = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.poleAdresDodajKlient = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -198,12 +204,6 @@ namespace wodomierz
             this.nazwa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idklient1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label14 = new System.Windows.Forms.Label();
-            this.poleKodDodajKlient = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.poleNazwaFirmyDodajKlient = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.poleTelefonDodajKlient = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.grupaDodajKlient.SuspendLayout();
@@ -350,6 +350,54 @@ namespace wodomierz
             this.grupaDodajKlient.TabStop = false;
             this.grupaDodajKlient.Text = "Dodaj klienta";
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(377, 95);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(61, 16);
+            this.label16.TabIndex = 15;
+            this.label16.Text = "Telefon";
+            // 
+            // poleTelefonDodajKlient
+            // 
+            this.poleTelefonDodajKlient.Location = new System.Drawing.Point(359, 122);
+            this.poleTelefonDodajKlient.Name = "poleTelefonDodajKlient";
+            this.poleTelefonDodajKlient.Size = new System.Drawing.Size(100, 22);
+            this.poleTelefonDodajKlient.TabIndex = 14;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(112, 113);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(91, 16);
+            this.label15.TabIndex = 13;
+            this.label15.Text = "Nazwa firmy";
+            // 
+            // poleNazwaFirmyDodajKlient
+            // 
+            this.poleNazwaFirmyDodajKlient.Location = new System.Drawing.Point(106, 132);
+            this.poleNazwaFirmyDodajKlient.Name = "poleNazwaFirmyDodajKlient";
+            this.poleNazwaFirmyDodajKlient.Size = new System.Drawing.Size(100, 22);
+            this.poleNazwaFirmyDodajKlient.TabIndex = 12;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(648, 30);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(104, 16);
+            this.label14.TabIndex = 11;
+            this.label14.Text = "Kod Pocztowy";
+            // 
+            // poleKodDodajKlient
+            // 
+            this.poleKodDodajKlient.Location = new System.Drawing.Point(646, 57);
+            this.poleKodDodajKlient.Name = "poleKodDodajKlient";
+            this.poleKodDodajKlient.Size = new System.Drawing.Size(100, 22);
+            this.poleKodDodajKlient.TabIndex = 10;
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -493,7 +541,7 @@ namespace wodomierz
             this.gridKlient.Name = "gridKlient";
             this.gridKlient.ReadOnly = true;
             this.gridKlient.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridKlient.Size = new System.Drawing.Size(829, 183);
+            this.gridKlient.Size = new System.Drawing.Size(829, 413);
             this.gridKlient.TabIndex = 4;
             this.gridKlient.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridKlient_CellContentClick);
             // 
@@ -562,7 +610,7 @@ namespace wodomierz
             // ileKartLb
             // 
             this.ileKartLb.AutoSize = true;
-            this.ileKartLb.Location = new System.Drawing.Point(834, 355);
+            this.ileKartLb.Location = new System.Drawing.Point(900, 305);
             this.ileKartLb.Name = "ileKartLb";
             this.ileKartLb.Size = new System.Drawing.Size(51, 16);
             this.ileKartLb.TabIndex = 3;
@@ -613,9 +661,9 @@ namespace wodomierz
             // 
             this.daneKlientListBox.FormattingEnabled = true;
             this.daneKlientListBox.ItemHeight = 16;
-            this.daneKlientListBox.Location = new System.Drawing.Point(828, 374);
+            this.daneKlientListBox.Location = new System.Drawing.Point(891, 374);
             this.daneKlientListBox.Name = "daneKlientListBox";
-            this.daneKlientListBox.Size = new System.Drawing.Size(154, 68);
+            this.daneKlientListBox.Size = new System.Drawing.Size(91, 68);
             this.daneKlientListBox.TabIndex = 0;
             // 
             // tabPage2
@@ -943,8 +991,8 @@ namespace wodomierz
             // wskazanieWodomierz
             // 
             this.wskazanieWodomierz.DataPropertyName = "wskazanieWodomierza";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.wskazanieWodomierz.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.wskazanieWodomierz.DefaultCellStyle = dataGridViewCellStyle1;
             this.wskazanieWodomierz.HeaderText = "Stan wodomierza";
             this.wskazanieWodomierz.Name = "wskazanieWodomierz";
             this.wskazanieWodomierz.ReadOnly = true;
@@ -1844,54 +1892,6 @@ namespace wodomierz
             this.id_.HeaderText = "id";
             this.id_.Name = "id_";
             this.id_.Visible = false;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(648, 30);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(104, 16);
-            this.label14.TabIndex = 11;
-            this.label14.Text = "Kod Pocztowy";
-            // 
-            // poleKodDodajKlient
-            // 
-            this.poleKodDodajKlient.Location = new System.Drawing.Point(646, 57);
-            this.poleKodDodajKlient.Name = "poleKodDodajKlient";
-            this.poleKodDodajKlient.Size = new System.Drawing.Size(100, 22);
-            this.poleKodDodajKlient.TabIndex = 10;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(112, 113);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(91, 16);
-            this.label15.TabIndex = 13;
-            this.label15.Text = "Nazwa firmy";
-            // 
-            // poleNazwaFirmyDodajKlient
-            // 
-            this.poleNazwaFirmyDodajKlient.Location = new System.Drawing.Point(106, 132);
-            this.poleNazwaFirmyDodajKlient.Name = "poleNazwaFirmyDodajKlient";
-            this.poleNazwaFirmyDodajKlient.Size = new System.Drawing.Size(100, 22);
-            this.poleNazwaFirmyDodajKlient.TabIndex = 12;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(377, 95);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(61, 16);
-            this.label16.TabIndex = 15;
-            this.label16.Text = "Telefon";
-            // 
-            // poleTelefonDodajKlient
-            // 
-            this.poleTelefonDodajKlient.Location = new System.Drawing.Point(359, 122);
-            this.poleTelefonDodajKlient.Name = "poleTelefonDodajKlient";
-            this.poleTelefonDodajKlient.Size = new System.Drawing.Size(100, 22);
-            this.poleTelefonDodajKlient.TabIndex = 14;
             // 
             // Form1
             // 

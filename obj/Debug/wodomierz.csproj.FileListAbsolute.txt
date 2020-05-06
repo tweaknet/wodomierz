@@ -1,0 +1,13 @@
+C:\Users\mc\Documents\GitHub\wodomierz\bin\Debug\wodomierz.exe.config
+C:\Users\mc\Documents\GitHub\wodomierz\bin\Debug\wodomierz.exe
+C:\Users\mc\Documents\GitHub\wodomierz\bin\Debug\wodomierz.pdb
+C:\Users\mc\Documents\GitHub\wodomierz\bin\Debug\Dapper.dll
+C:\Users\mc\Documents\GitHub\wodomierz\bin\Debug\Dapper.xml
+C:\Users\mc\Documents\GitHub\wodomierz\obj\Debug\wodomierz.csprojAssemblyReference.cache
+C:\Users\mc\Documents\GitHub\wodomierz\obj\Debug\wodomierz.Form1.resources
+C:\Users\mc\Documents\GitHub\wodomierz\obj\Debug\wodomierz.Properties.Resources.resources
+C:\Users\mc\Documents\GitHub\wodomierz\obj\Debug\wodomierz.csproj.GenerateResource.cache
+C:\Users\mc\Documents\GitHub\wodomierz\obj\Debug\wodomierz.csproj.CoreCompileInputs.cache
+C:\Users\mc\Documents\GitHub\wodomierz\obj\Debug\wodomierz.csproj.CopyComplete
+C:\Users\mc\Documents\GitHub\wodomierz\obj\Debug\wodomierz.exe
+C:\Users\mc\Documents\GitHub\wodomierz\obj\Debug\wodomierz.pdb
