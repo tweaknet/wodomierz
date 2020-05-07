@@ -31,7 +31,7 @@ namespace wodomierz
         public void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button1 = new System.Windows.Forms.Button();
             this.haslo = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -70,13 +70,15 @@ namespace wodomierz
             this.adres2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kodPocztowy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefon2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ileKartLb = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.daneKlientListBox = new System.Windows.Forms.ListBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btUsunStanWod = new System.Windows.Forms.Button();
+            this.btPoprawStanWod = new System.Windows.Forms.Button();
+            this.btDodajNowyStanWod = new System.Windows.Forms.Button();
+            this.btDodajStanWod = new System.Windows.Forms.Button();
             this.grDodajStanWod = new System.Windows.Forms.GroupBox();
             this.grWybierzKlientaWod = new System.Windows.Forms.GroupBox();
             this.btWybStWod = new System.Windows.Forms.Button();
@@ -100,8 +102,6 @@ namespace wodomierz
             this.btZapiszStanWod = new System.Windows.Forms.Button();
             this.poleDataOdczytuWod = new System.Windows.Forms.DateTimePicker();
             this.dodajKlientaStanWod = new System.Windows.Forms.Button();
-            this.btUsunStanWod = new System.Windows.Forms.Button();
-            this.btDodajNowyStanWod = new System.Windows.Forms.Button();
             this.gridWodomierz = new System.Windows.Forms.DataGridView();
             this.idwodomierz = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idKlientWodomierz = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -109,9 +109,7 @@ namespace wodomierz
             this.nrIdentyfikacyjny = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.wskazanieWodomierz = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataOdczytu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btDodajStanWod = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.btPoprawStanWod = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
@@ -169,6 +167,20 @@ namespace wodomierz
             this.btPoprawFakture = new System.Windows.Forms.Button();
             this.btDodajFakture = new System.Windows.Forms.Button();
             this.gridFaktury = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idKlient = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nrFaktury = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imieN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nazwiskoN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataWystawieniaN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.terminPlatnosciN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nettoN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nazwaFirmyN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.formaPlatnosciN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adresKlientN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nazwaBankuN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefonN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.symbolVatN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.gridCennik = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -186,6 +198,7 @@ namespace wodomierz
             this.txtczyAdmin = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.txtaktywny = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.PositionID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ileKartLb = new System.Windows.Forms.Label();
             this.pracownikBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.logowanie = new wodomierz.logowanie();
             this.pracownikBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -201,20 +214,6 @@ namespace wodomierz
             this.nazwa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idklient1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idKlient = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nrFaktury = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imieN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazwiskoN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataWystawieniaN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.terminPlatnosciN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nettoN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazwaFirmyN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.formaPlatnosciN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adresKlientN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazwaBankuN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefonN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.symbolVatN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.grupaDodajKlient.SuspendLayout();
@@ -325,9 +324,7 @@ namespace wodomierz
             this.tabPage1.Controls.Add(this.nazwisko);
             this.tabPage1.Controls.Add(this.usunKlient);
             this.tabPage1.Controls.Add(this.gridKlient);
-            this.tabPage1.Controls.Add(this.ileKartLb);
             this.tabPage1.Controls.Add(this.groupBox2);
-            this.tabPage1.Controls.Add(this.daneKlientListBox);
             this.tabPage1.Location = new System.Drawing.Point(4, 26);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -519,10 +516,11 @@ namespace wodomierz
             // 
             // nazwisko
             // 
-            this.nazwisko.Location = new System.Drawing.Point(891, 335);
+            this.nazwisko.Location = new System.Drawing.Point(341, 433);
             this.nazwisko.Name = "nazwisko";
-            this.nazwisko.Size = new System.Drawing.Size(60, 22);
+            this.nazwisko.Size = new System.Drawing.Size(132, 22);
             this.nazwisko.TabIndex = 2;
+            this.nazwisko.Text = "Filtr nazwiska";
             // 
             // usunKlient
             // 
@@ -621,15 +619,6 @@ namespace wodomierz
             this.telefon2.Name = "telefon2";
             this.telefon2.ReadOnly = true;
             // 
-            // ileKartLb
-            // 
-            this.ileKartLb.AutoSize = true;
-            this.ileKartLb.Location = new System.Drawing.Point(900, 305);
-            this.ileKartLb.Name = "ileKartLb";
-            this.ileKartLb.Size = new System.Drawing.Size(51, 16);
-            this.ileKartLb.TabIndex = 3;
-            this.ileKartLb.Text = "label1";
-            // 
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -663,22 +652,10 @@ namespace wodomierz
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(16, 30);
+            this.button3.Location = new System.Drawing.Point(0, 0);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "Dodaj";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // daneKlientListBox
-            // 
-            this.daneKlientListBox.FormattingEnabled = true;
-            this.daneKlientListBox.ItemHeight = 16;
-            this.daneKlientListBox.Location = new System.Drawing.Point(891, 374);
-            this.daneKlientListBox.Name = "daneKlientListBox";
-            this.daneKlientListBox.Size = new System.Drawing.Size(91, 68);
-            this.daneKlientListBox.TabIndex = 0;
+            this.button3.TabIndex = 3;
             // 
             // tabPage2
             // 
@@ -688,9 +665,6 @@ namespace wodomierz
             this.tabPage2.Controls.Add(this.btDodajStanWod);
             this.tabPage2.Controls.Add(this.grDodajStanWod);
             this.tabPage2.Controls.Add(this.gridWodomierz);
-            this.tabPage2.Controls.Add(this.button7);
-            this.tabPage2.Controls.Add(this.button2);
-            this.tabPage2.Controls.Add(this.button8);
             this.tabPage2.Location = new System.Drawing.Point(4, 26);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -698,6 +672,50 @@ namespace wodomierz
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Stany wodomierzy";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btUsunStanWod
+            // 
+            this.btUsunStanWod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btUsunStanWod.Location = new System.Drawing.Point(429, 433);
+            this.btUsunStanWod.Name = "btUsunStanWod";
+            this.btUsunStanWod.Size = new System.Drawing.Size(75, 23);
+            this.btUsunStanWod.TabIndex = 13;
+            this.btUsunStanWod.Text = "Usuń";
+            this.btUsunStanWod.UseVisualStyleBackColor = true;
+            this.btUsunStanWod.Click += new System.EventHandler(this.btUsunStanWod_Click);
+            // 
+            // btPoprawStanWod
+            // 
+            this.btPoprawStanWod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btPoprawStanWod.Location = new System.Drawing.Point(347, 433);
+            this.btPoprawStanWod.Name = "btPoprawStanWod";
+            this.btPoprawStanWod.Size = new System.Drawing.Size(75, 23);
+            this.btPoprawStanWod.TabIndex = 4;
+            this.btPoprawStanWod.Text = "Popraw";
+            this.btPoprawStanWod.UseVisualStyleBackColor = true;
+            this.btPoprawStanWod.Click += new System.EventHandler(this.btPoprawStanWod_Click);
+            // 
+            // btDodajNowyStanWod
+            // 
+            this.btDodajNowyStanWod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btDodajNowyStanWod.Location = new System.Drawing.Point(160, 433);
+            this.btDodajNowyStanWod.Name = "btDodajNowyStanWod";
+            this.btDodajNowyStanWod.Size = new System.Drawing.Size(176, 23);
+            this.btDodajNowyStanWod.TabIndex = 12;
+            this.btDodajNowyStanWod.Text = "Dodaj nowy wodomierz";
+            this.btDodajNowyStanWod.UseVisualStyleBackColor = true;
+            this.btDodajNowyStanWod.Click += new System.EventHandler(this.btDodajNowyStanWod_Click);
+            // 
+            // btDodajStanWod
+            // 
+            this.btDodajStanWod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btDodajStanWod.Location = new System.Drawing.Point(6, 433);
+            this.btDodajStanWod.Name = "btDodajStanWod";
+            this.btDodajStanWod.Size = new System.Drawing.Size(148, 23);
+            this.btDodajStanWod.TabIndex = 1;
+            this.btDodajStanWod.Text = "Dodaj nowy odczyt";
+            this.btDodajStanWod.UseVisualStyleBackColor = true;
+            this.btDodajStanWod.Click += new System.EventHandler(this.btDodajStanWod_Click);
             // 
             // grDodajStanWod
             // 
@@ -921,28 +939,6 @@ namespace wodomierz
             this.dodajKlientaStanWod.UseVisualStyleBackColor = true;
             this.dodajKlientaStanWod.Click += new System.EventHandler(this.dodajKlientaStanWod_Click);
             // 
-            // btUsunStanWod
-            // 
-            this.btUsunStanWod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btUsunStanWod.Location = new System.Drawing.Point(429, 433);
-            this.btUsunStanWod.Name = "btUsunStanWod";
-            this.btUsunStanWod.Size = new System.Drawing.Size(75, 23);
-            this.btUsunStanWod.TabIndex = 13;
-            this.btUsunStanWod.Text = "Usuń";
-            this.btUsunStanWod.UseVisualStyleBackColor = true;
-            this.btUsunStanWod.Click += new System.EventHandler(this.btUsunStanWod_Click);
-            // 
-            // btDodajNowyStanWod
-            // 
-            this.btDodajNowyStanWod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btDodajNowyStanWod.Location = new System.Drawing.Point(160, 433);
-            this.btDodajNowyStanWod.Name = "btDodajNowyStanWod";
-            this.btDodajNowyStanWod.Size = new System.Drawing.Size(176, 23);
-            this.btDodajNowyStanWod.TabIndex = 12;
-            this.btDodajNowyStanWod.Text = "Dodaj nowy wodomierz";
-            this.btDodajNowyStanWod.UseVisualStyleBackColor = true;
-            this.btDodajNowyStanWod.Click += new System.EventHandler(this.btDodajNowyStanWod_Click);
-            // 
             // gridWodomierz
             // 
             this.gridWodomierz.AllowUserToAddRows = false;
@@ -1007,8 +1003,8 @@ namespace wodomierz
             // wskazanieWodomierz
             // 
             this.wskazanieWodomierz.DataPropertyName = "wskazanieWodomierza";
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.wskazanieWodomierz.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.wskazanieWodomierz.DefaultCellStyle = dataGridViewCellStyle1;
             this.wskazanieWodomierz.HeaderText = "Stan wodomierza";
             this.wskazanieWodomierz.Name = "wskazanieWodomierz";
             this.wskazanieWodomierz.ReadOnly = true;
@@ -1022,55 +1018,40 @@ namespace wodomierz
             this.dataOdczytu.ReadOnly = true;
             this.dataOdczytu.Width = 170;
             // 
-            // btDodajStanWod
-            // 
-            this.btDodajStanWod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btDodajStanWod.Location = new System.Drawing.Point(6, 433);
-            this.btDodajStanWod.Name = "btDodajStanWod";
-            this.btDodajStanWod.Size = new System.Drawing.Size(148, 23);
-            this.btDodajStanWod.TabIndex = 1;
-            this.btDodajStanWod.Text = "Dodaj nowy odczyt";
-            this.btDodajStanWod.UseVisualStyleBackColor = true;
-            this.btDodajStanWod.Click += new System.EventHandler(this.btDodajStanWod_Click);
-            // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(784, 433);
+            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button7.Location = new System.Drawing.Point(956, 525);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.Size = new System.Drawing.Size(15, 15);
             this.button7.TabIndex = 2;
-            this.button7.Text = "Pokaz";
+            this.button7.Text = "P";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
-            // btPoprawStanWod
-            // 
-            this.btPoprawStanWod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btPoprawStanWod.Location = new System.Drawing.Point(347, 433);
-            this.btPoprawStanWod.Name = "btPoprawStanWod";
-            this.btPoprawStanWod.Size = new System.Drawing.Size(75, 23);
-            this.btPoprawStanWod.TabIndex = 4;
-            this.btPoprawStanWod.Text = "Popraw";
-            this.btPoprawStanWod.UseVisualStyleBackColor = true;
-            this.btPoprawStanWod.Click += new System.EventHandler(this.btPoprawStanWod_Click);
-            // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(928, 439);
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button2.Location = new System.Drawing.Point(984, 525);
+            this.button2.Margin = new System.Windows.Forms.Padding(0);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(15, 15);
             this.button2.TabIndex = 10;
-            this.button2.Text = "button2";
+            this.button2.Text = "A";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(865, 433);
+            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button8.Location = new System.Drawing.Point(970, 525);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
+            this.button8.Size = new System.Drawing.Size(15, 15);
             this.button8.TabIndex = 3;
-            this.button8.Text = "Ukryj";
+            this.button8.Text = "U";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
@@ -1132,7 +1113,7 @@ namespace wodomierz
             this.grupaWybWodFakt.Controls.Add(this.btWybWod);
             this.grupaWybWodFakt.Controls.Add(this.btWrocWod);
             this.grupaWybWodFakt.Controls.Add(this.gridWyborWodomierz);
-            this.grupaWybWodFakt.Location = new System.Drawing.Point(107, 310);
+            this.grupaWybWodFakt.Location = new System.Drawing.Point(115, 94);
             this.grupaWybWodFakt.Name = "grupaWybWodFakt";
             this.grupaWybWodFakt.Size = new System.Drawing.Size(617, 227);
             this.grupaWybWodFakt.TabIndex = 29;
@@ -1215,7 +1196,7 @@ namespace wodomierz
             this.grWyboruKlientaDoFaktury.Controls.Add(this.dataGridView1);
             this.grWyboruKlientaDoFaktury.Controls.Add(this.btWrocWyborKlientaDoFaktury);
             this.grWyboruKlientaDoFaktury.Controls.Add(this.btWybierzKlientaDoFaktury);
-            this.grWyboruKlientaDoFaktury.Location = new System.Drawing.Point(180, 30);
+            this.grWyboruKlientaDoFaktury.Location = new System.Drawing.Point(124, 63);
             this.grWyboruKlientaDoFaktury.Name = "grWyboruKlientaDoFaktury";
             this.grWyboruKlientaDoFaktury.Size = new System.Drawing.Size(600, 200);
             this.grWyboruKlientaDoFaktury.TabIndex = 29;
@@ -1657,6 +1638,113 @@ namespace wodomierz
             this.gridFaktury.TabIndex = 6;
             this.gridFaktury.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridFaktury_CellDoubleClick);
             // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // idKlient
+            // 
+            this.idKlient.DataPropertyName = "idKlient";
+            this.idKlient.HeaderText = "idKlient";
+            this.idKlient.Name = "idKlient";
+            this.idKlient.ReadOnly = true;
+            this.idKlient.Visible = false;
+            this.idKlient.Width = 160;
+            // 
+            // nrFaktury
+            // 
+            this.nrFaktury.DataPropertyName = "nrFaktury";
+            this.nrFaktury.HeaderText = "Nr faktury";
+            this.nrFaktury.Name = "nrFaktury";
+            this.nrFaktury.ReadOnly = true;
+            this.nrFaktury.Width = 125;
+            // 
+            // imieN
+            // 
+            this.imieN.DataPropertyName = "imie";
+            this.imieN.HeaderText = "Imie";
+            this.imieN.Name = "imieN";
+            this.imieN.ReadOnly = true;
+            this.imieN.Width = 120;
+            // 
+            // nazwiskoN
+            // 
+            this.nazwiskoN.DataPropertyName = "nazwisko";
+            this.nazwiskoN.HeaderText = "Nazwisko";
+            this.nazwiskoN.Name = "nazwiskoN";
+            this.nazwiskoN.ReadOnly = true;
+            this.nazwiskoN.Width = 180;
+            // 
+            // dataWystawieniaN
+            // 
+            this.dataWystawieniaN.DataPropertyName = "dataWystawienia";
+            this.dataWystawieniaN.HeaderText = "Data wystawienia";
+            this.dataWystawieniaN.Name = "dataWystawieniaN";
+            this.dataWystawieniaN.ReadOnly = true;
+            // 
+            // terminPlatnosciN
+            // 
+            this.terminPlatnosciN.DataPropertyName = "terminPlatnosci";
+            this.terminPlatnosciN.HeaderText = "Termin płatności";
+            this.terminPlatnosciN.Name = "terminPlatnosciN";
+            this.terminPlatnosciN.ReadOnly = true;
+            // 
+            // nettoN
+            // 
+            this.nettoN.DataPropertyName = "netto";
+            this.nettoN.HeaderText = "Netto";
+            this.nettoN.Name = "nettoN";
+            this.nettoN.ReadOnly = true;
+            // 
+            // nazwaFirmyN
+            // 
+            this.nazwaFirmyN.DataPropertyName = "nazwaFirmy";
+            this.nazwaFirmyN.HeaderText = "Nazwa firmy";
+            this.nazwaFirmyN.Name = "nazwaFirmyN";
+            this.nazwaFirmyN.ReadOnly = true;
+            // 
+            // formaPlatnosciN
+            // 
+            this.formaPlatnosciN.DataPropertyName = "formaPlatnosci";
+            this.formaPlatnosciN.HeaderText = "Forma płatności";
+            this.formaPlatnosciN.Name = "formaPlatnosciN";
+            this.formaPlatnosciN.ReadOnly = true;
+            // 
+            // adresKlientN
+            // 
+            this.adresKlientN.DataPropertyName = "adresKlient";
+            this.adresKlientN.HeaderText = "Adres";
+            this.adresKlientN.Name = "adresKlientN";
+            this.adresKlientN.ReadOnly = true;
+            // 
+            // nazwaBankuN
+            // 
+            this.nazwaBankuN.DataPropertyName = "nazwaBanku";
+            this.nazwaBankuN.HeaderText = "nazwaBanku";
+            this.nazwaBankuN.Name = "nazwaBankuN";
+            this.nazwaBankuN.ReadOnly = true;
+            this.nazwaBankuN.Visible = false;
+            // 
+            // telefonN
+            // 
+            this.telefonN.DataPropertyName = "telefon";
+            this.telefonN.HeaderText = "telefon";
+            this.telefonN.Name = "telefonN";
+            this.telefonN.ReadOnly = true;
+            this.telefonN.Visible = false;
+            // 
+            // symbolVatN
+            // 
+            this.symbolVatN.DataPropertyName = "symbolVat";
+            this.symbolVatN.HeaderText = "symbolVatN";
+            this.symbolVatN.Name = "symbolVatN";
+            this.symbolVatN.ReadOnly = true;
+            this.symbolVatN.Visible = false;
+            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.gridCennik);
@@ -1813,6 +1901,17 @@ namespace wodomierz
             this.PositionID.Name = "PositionID";
             this.PositionID.Visible = false;
             // 
+            // ileKartLb
+            // 
+            this.ileKartLb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ileKartLb.AutoSize = true;
+            this.ileKartLb.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ileKartLb.Location = new System.Drawing.Point(1001, 530);
+            this.ileKartLb.Name = "ileKartLb";
+            this.ileKartLb.Size = new System.Drawing.Size(24, 7);
+            this.ileKartLb.TabIndex = 3;
+            this.ileKartLb.Text = "label1";
+            // 
             // pracownikBindingSource1
             // 
             this.pracownikBindingSource1.DataMember = "pracownik";
@@ -1912,113 +2011,6 @@ namespace wodomierz
             this.id_.Name = "id_";
             this.id_.Visible = false;
             // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            // 
-            // idKlient
-            // 
-            this.idKlient.DataPropertyName = "idKlient";
-            this.idKlient.HeaderText = "idKlient";
-            this.idKlient.Name = "idKlient";
-            this.idKlient.ReadOnly = true;
-            this.idKlient.Visible = false;
-            this.idKlient.Width = 160;
-            // 
-            // nrFaktury
-            // 
-            this.nrFaktury.DataPropertyName = "nrFaktury";
-            this.nrFaktury.HeaderText = "Nr faktury";
-            this.nrFaktury.Name = "nrFaktury";
-            this.nrFaktury.ReadOnly = true;
-            this.nrFaktury.Width = 125;
-            // 
-            // imieN
-            // 
-            this.imieN.DataPropertyName = "imie";
-            this.imieN.HeaderText = "Imie";
-            this.imieN.Name = "imieN";
-            this.imieN.ReadOnly = true;
-            this.imieN.Width = 120;
-            // 
-            // nazwiskoN
-            // 
-            this.nazwiskoN.DataPropertyName = "nazwisko";
-            this.nazwiskoN.HeaderText = "Nazwisko";
-            this.nazwiskoN.Name = "nazwiskoN";
-            this.nazwiskoN.ReadOnly = true;
-            this.nazwiskoN.Width = 180;
-            // 
-            // dataWystawieniaN
-            // 
-            this.dataWystawieniaN.DataPropertyName = "dataWystawienia";
-            this.dataWystawieniaN.HeaderText = "Data wystawienia";
-            this.dataWystawieniaN.Name = "dataWystawieniaN";
-            this.dataWystawieniaN.ReadOnly = true;
-            // 
-            // terminPlatnosciN
-            // 
-            this.terminPlatnosciN.DataPropertyName = "terminPlatnosci";
-            this.terminPlatnosciN.HeaderText = "Termin płatności";
-            this.terminPlatnosciN.Name = "terminPlatnosciN";
-            this.terminPlatnosciN.ReadOnly = true;
-            // 
-            // nettoN
-            // 
-            this.nettoN.DataPropertyName = "netto";
-            this.nettoN.HeaderText = "Netto";
-            this.nettoN.Name = "nettoN";
-            this.nettoN.ReadOnly = true;
-            // 
-            // nazwaFirmyN
-            // 
-            this.nazwaFirmyN.DataPropertyName = "nazwaFirmy";
-            this.nazwaFirmyN.HeaderText = "Nazwa firmy";
-            this.nazwaFirmyN.Name = "nazwaFirmyN";
-            this.nazwaFirmyN.ReadOnly = true;
-            // 
-            // formaPlatnosciN
-            // 
-            this.formaPlatnosciN.DataPropertyName = "formaPlatnosci";
-            this.formaPlatnosciN.HeaderText = "Forma płatności";
-            this.formaPlatnosciN.Name = "formaPlatnosciN";
-            this.formaPlatnosciN.ReadOnly = true;
-            // 
-            // adresKlientN
-            // 
-            this.adresKlientN.DataPropertyName = "adresKlient";
-            this.adresKlientN.HeaderText = "Adres";
-            this.adresKlientN.Name = "adresKlientN";
-            this.adresKlientN.ReadOnly = true;
-            // 
-            // nazwaBankuN
-            // 
-            this.nazwaBankuN.DataPropertyName = "nazwaBanku";
-            this.nazwaBankuN.HeaderText = "nazwaBanku";
-            this.nazwaBankuN.Name = "nazwaBankuN";
-            this.nazwaBankuN.ReadOnly = true;
-            this.nazwaBankuN.Visible = false;
-            // 
-            // telefonN
-            // 
-            this.telefonN.DataPropertyName = "telefon";
-            this.telefonN.HeaderText = "telefon";
-            this.telefonN.Name = "telefonN";
-            this.telefonN.ReadOnly = true;
-            this.telefonN.Visible = false;
-            // 
-            // symbolVatN
-            // 
-            this.symbolVatN.DataPropertyName = "symbolVat";
-            this.symbolVatN.HeaderText = "symbolVatN";
-            this.symbolVatN.Name = "symbolVatN";
-            this.symbolVatN.ReadOnly = true;
-            this.symbolVatN.Visible = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2030,14 +2022,16 @@ namespace wodomierz
             this.Controls.Add(this.pHaslo);
             this.Controls.Add(this.pLogin);
             this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.ileKartLb);
+            this.Controls.Add(this.button8);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.haslo);
             this.Controls.Add(this.button1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Wodomierz";
-            this.AutoSizeChanged += new System.EventHandler(this.button2_Click_1);
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.ResizeEnd += new System.EventHandler(this.ustawianieWilekosciTaba);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -2102,7 +2096,6 @@ namespace wodomierz
         private System.Windows.Forms.Button btDodajStanWod;
         public System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
         public System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ListBox daneKlientListBox;
         private System.Windows.Forms.TextBox nazwisko;
         private logowanie logowanie;
         private System.Windows.Forms.BindingSource pracownikBindingSource;

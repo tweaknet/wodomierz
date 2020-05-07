@@ -161,19 +161,6 @@ namespace wodomierz
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            DataAccess db = new DataAccess();
-            klient = db.GetKlients(nazwisko.Text);
-            updateListKlient();
-
-        }
-        private void updateListKlient()
-        {
-            daneKlientListBox.DataSource = klient;
-            daneKlientListBox.DisplayMember = "FullInfo";
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'logowanie.pracownik' . Możesz go przenieść lub usunąć.
@@ -587,9 +574,9 @@ namespace wodomierz
                 DataTable klient = new DataTable();
                 sqlklient.Fill(klient);
                 dataGridView1.DataSource = klient;
-                //int nRowIndex = dataGridView1.Rows.Count - 1;
-                //dataGridView1.Rows[nRowIndex].Selected = true;
-                //dataGridView1.CurrentCell = dataGridView1.Rows[nRowIndex].Cells[0];
+                int nRowIndex = dataGridView1.Rows.Count - 1;
+                dataGridView1.Rows[nRowIndex].Selected = true;
+                dataGridView1.CurrentCell = dataGridView1.Rows[nRowIndex].Cells[1];
             }
         }
 
@@ -648,9 +635,8 @@ namespace wodomierz
                 sqlwodomierz.Fill(wodomierz);
                 gridWodomierz.DataSource = wodomierz;
                 int nRowIndex = gridWodomierz.Rows.Count - 1;
-                //gridWodomierz.Rows[nRowIndex].Selected = true;
-                //dataGridView1.CurrentCell = dataGridView1.Rows[nRowIndex].Cells[0];
-                //gridWodomierz.CurrentCell = gridWodomierz.Rows[nRowIndex].Cells[0];
+                gridWodomierz.Rows[nRowIndex].Selected = true;
+                gridWodomierz.CurrentCell = gridWodomierz.Rows[nRowIndex].Cells[1];
             }
         }
         void GridKlient()
@@ -662,9 +648,9 @@ namespace wodomierz
                 DataTable klient = new DataTable();
                 sqlklient.Fill(klient);
                 gridKlient.DataSource = klient;
-                //int nRowIndex = dataGridView1.Rows.Count - 1;
-                //dataGridView1.Rows[nRowIndex].Selected = true;
-                //dataGridView1.CurrentCell = dataGridView1.Rows[nRowIndex].Cells[0];
+                int nRowIndex = gridKlient.Rows.Count - 1;
+                gridKlient.Rows[nRowIndex].Selected = true;
+                gridKlient.CurrentCell = gridKlient.Rows[nRowIndex].Cells[1];
             }
         }
         void GrupaWybierWodomierzFaktury()
@@ -772,9 +758,9 @@ namespace wodomierz
                 DataTable klient = new DataTable();
                 sqlklient.Fill(klient);
                 gridWybKlientaStanWod.DataSource = klient;
-                //int nRowIndex = dataGridView1.Rows.Count - 1;
-                //dataGridView1.Rows[nRowIndex].Selected = true;
-                //dataGridView1.CurrentCell = dataGridView1.Rows[nRowIndex].Cells[0];
+                int nRowIndex = gridWybKlientaStanWod.Rows.Count - 1;
+                gridWybKlientaStanWod.Rows[nRowIndex].Selected = true;
+                gridWybKlientaStanWod.CurrentCell = gridWybKlientaStanWod.Rows[nRowIndex].Cells[2];
             }
             grWybierzKlientaWod.Show();
         }
