@@ -214,13 +214,14 @@ namespace wodomierz
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
                 sqlCon.Open();
-                SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT * FROM faktura", sqlCon);
+                SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT id, idKlient, nrFaktury, imie, nazwisko, dataWystawienia, formaPlatnosci,  nazwaFirmy,  " +
+                    "terminPlatnosci, netto, adresKlient, nazwaBanku, telefon FROM faktura", sqlCon);
                 DataTable faktury = new DataTable();
                 sqlDa.Fill(faktury);
                 gridFaktury.DataSource = faktury;
-                int nRowIndex = gridFaktury.Rows.Count - 1;
-                gridFaktury.Rows[nRowIndex].Selected = true;
-                gridFaktury.CurrentCell = gridFaktury.Rows[nRowIndex].Cells[0];
+                //int nRowIndex = gridFaktury.Rows.Count - 1;
+                //gridFaktury.Rows[nRowIndex].Selected = true;
+                //gridFaktury.CurrentCell = gridFaktury.Rows[nRowIndex].Cells[0];
             }
         }
 
