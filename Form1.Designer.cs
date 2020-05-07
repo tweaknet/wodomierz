@@ -31,7 +31,7 @@ namespace wodomierz
         public void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button1 = new System.Windows.Forms.Button();
             this.haslo = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -214,6 +214,7 @@ namespace wodomierz
             this.adresKlientN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazwaBankuN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefonN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.symbolVatN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.grupaDodajKlient.SuspendLayout();
@@ -1006,8 +1007,8 @@ namespace wodomierz
             // wskazanieWodomierz
             // 
             this.wskazanieWodomierz.DataPropertyName = "wskazanieWodomierza";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.wskazanieWodomierz.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.wskazanieWodomierz.DefaultCellStyle = dataGridViewCellStyle18;
             this.wskazanieWodomierz.HeaderText = "Stan wodomierza";
             this.wskazanieWodomierz.Name = "wskazanieWodomierz";
             this.wskazanieWodomierz.ReadOnly = true;
@@ -1131,7 +1132,7 @@ namespace wodomierz
             this.grupaWybWodFakt.Controls.Add(this.btWybWod);
             this.grupaWybWodFakt.Controls.Add(this.btWrocWod);
             this.grupaWybWodFakt.Controls.Add(this.gridWyborWodomierz);
-            this.grupaWybWodFakt.Location = new System.Drawing.Point(144, 100);
+            this.grupaWybWodFakt.Location = new System.Drawing.Point(107, 310);
             this.grupaWybWodFakt.Name = "grupaWybWodFakt";
             this.grupaWybWodFakt.Size = new System.Drawing.Size(617, 227);
             this.grupaWybWodFakt.TabIndex = 29;
@@ -1214,7 +1215,7 @@ namespace wodomierz
             this.grWyboruKlientaDoFaktury.Controls.Add(this.dataGridView1);
             this.grWyboruKlientaDoFaktury.Controls.Add(this.btWrocWyborKlientaDoFaktury);
             this.grWyboruKlientaDoFaktury.Controls.Add(this.btWybierzKlientaDoFaktury);
-            this.grWyboruKlientaDoFaktury.Location = new System.Drawing.Point(150, 70);
+            this.grWyboruKlientaDoFaktury.Location = new System.Drawing.Point(180, 30);
             this.grWyboruKlientaDoFaktury.Name = "grWyboruKlientaDoFaktury";
             this.grWyboruKlientaDoFaktury.Size = new System.Drawing.Size(600, 200);
             this.grWyboruKlientaDoFaktury.TabIndex = 29;
@@ -1645,7 +1646,8 @@ namespace wodomierz
             this.formaPlatnosciN,
             this.adresKlientN,
             this.nazwaBankuN,
-            this.telefonN});
+            this.telefonN,
+            this.symbolVatN});
             this.gridFaktury.Location = new System.Drawing.Point(6, 7);
             this.gridFaktury.MultiSelect = false;
             this.gridFaktury.Name = "gridFaktury";
@@ -2009,6 +2011,14 @@ namespace wodomierz
             this.telefonN.ReadOnly = true;
             this.telefonN.Visible = false;
             // 
+            // symbolVatN
+            // 
+            this.symbolVatN.DataPropertyName = "symbolVat";
+            this.symbolVatN.HeaderText = "symbolVatN";
+            this.symbolVatN.Name = "symbolVatN";
+            this.symbolVatN.ReadOnly = true;
+            this.symbolVatN.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2248,6 +2258,7 @@ namespace wodomierz
         private System.Windows.Forms.DataGridViewTextBoxColumn adresKlientN;
         private System.Windows.Forms.DataGridViewTextBoxColumn nazwaBankuN;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefonN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn symbolVatN;
     }
 }
 

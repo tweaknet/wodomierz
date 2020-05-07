@@ -215,13 +215,13 @@ namespace wodomierz
             {
                 sqlCon.Open();
                 SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT id, idKlient, nrFaktury, imie, nazwisko, dataWystawienia, formaPlatnosci,  nazwaFirmy,  " +
-                    "terminPlatnosci, netto, adresKlient, nazwaBanku, telefon FROM faktura", sqlCon);
+                    "terminPlatnosci, netto, adresKlient, nazwaBanku, telefon, symbolVat FROM faktura", sqlCon);
                 DataTable faktury = new DataTable();
                 sqlDa.Fill(faktury);
                 gridFaktury.DataSource = faktury;
-                //int nRowIndex = gridFaktury.Rows.Count - 1;
-                //gridFaktury.Rows[nRowIndex].Selected = true;
-                //gridFaktury.CurrentCell = gridFaktury.Rows[nRowIndex].Cells[0];
+                int nRowIndexGF = gridFaktury.Rows.Count - 1;
+                gridFaktury.Rows[nRowIndexGF].Selected = true;
+                gridFaktury.CurrentCell = gridFaktury.Rows[nRowIndexGF].Cells[3];
             }
         }
 
@@ -394,18 +394,16 @@ namespace wodomierz
                 sqlCmd.Parameters.AddWithValue("@adresKlient", lbAdresKlienta.Text.Length == 0 ? "" : lbAdresKlienta.Text);
                 sqlCmd.Parameters.AddWithValue("@dataWystawienia", DateTime.Now);
                 sqlCmd.Parameters.AddWithValue("@formaPlatnosci", poleFormaPlatnosci.Text);
-                sqlCmd.Parameters.AddWithValue("@imie", "marcin");
+                sqlCmd.Parameters.AddWithValue("@imie", toImie);
                 sqlCmd.Parameters.AddWithValue("@naleznosci", Convert.ToDecimal(0));
                 sqlCmd.Parameters.AddWithValue("@nazwaBanku", lbNazwaBanku.Text.Length == 0 ? "" : lbNazwaBanku.Text);
                 sqlCmd.Parameters.AddWithValue("@nazwaFirmy", lbNazwaFirmy.Text.Length == 0 ? "" : lbNazwaFirmy.Text);
-                sqlCmd.Parameters.AddWithValue("@nazwisko", "Marcin");
+                sqlCmd.Parameters.AddWithValue("@nazwisko", tonazwisko);
                 sqlCmd.Parameters.AddWithValue("@nrFaktury", nrNowejFaktury);
                 sqlCmd.Parameters.AddWithValue("@telefon", lbTelefon.Text.Length == 0 ? "" : lbTelefon.Text);
                 sqlCmd.Parameters.AddWithValue("@terminPlatnosci", wyborTerminu.Value);
-                sqlCmd.Parameters.AddWithValue("@brutto", Convert.ToDecimal(0));
                 sqlCmd.Parameters.AddWithValue("@netto", poleNetto.Text.Length == 0 ? Convert.ToDecimal(0) : Convert.ToDecimal(poleNetto.Text));
                 sqlCmd.Parameters.AddWithValue("@symbolVat", poleStawkaVat.SelectedItem);
-                sqlCmd.Parameters.AddWithValue("@vat", Convert.ToDecimal(1.258));
                 sqlCmd.Parameters.AddWithValue("@idPrac", EmployeeID);
                 sqlCmd.ExecuteNonQuery();
                 //PopulateDataGridView();dataGridView1.SelectedRows[0].Cells["nazwa2"].Value.ToString() + " " + dataGridView1.SelectedRows[0].Cells["nazwaFirmy1"].Value.ToString();
@@ -564,18 +562,18 @@ namespace wodomierz
             gridFaktury.Hide();
             nowyInsert = false;
             nrFaktury = gridFaktury.SelectedRows[0].Cells["nrFaktury"].Value.ToString();
-            poleNetto.Text = gridFaktury.SelectedRows[0].Cells["netto"].Value.ToString();
+            poleNetto.Text = gridFaktury.SelectedRows[0].Cells["nettoN"].Value.ToString();
             poleNrKlienta.Text = gridFaktury.SelectedRows[0].Cells["idklient"].Value.ToString();
-            poleNrWodomierza.Text = "brak pola w bazie dodać";
-            wyborTerminu.Value = Convert.ToDateTime(gridFaktury.SelectedRows[0].Cells["terminPlatnosci"].Value);
-            poleFormaPlatnosci.Text = gridFaktury.SelectedRows[0].Cells["formaPlatnosci"].Value.ToString();
-            poleStawkaVat.Text = gridFaktury.SelectedRows[0].Cells["symbolVat"].Value.ToString();
+            poleNrWodomierza.Text = "12";
+            wyborTerminu.Value = Convert.ToDateTime(gridFaktury.SelectedRows[0].Cells["terminPlatnosciN"].Value);
+            poleFormaPlatnosci.Text = gridFaktury.SelectedRows[0].Cells["formaPlatnosciN"].Value.ToString();
+            poleStawkaVat.Text = gridFaktury.SelectedRows[0].Cells["symbolVatN"].Value.ToString();
             grPozFaktur.Text = "Dane faktury nr: " + nrFaktury;
-            lbNazwaKlienta.Text = gridFaktury.SelectedRows[0].Cells["imie"].Value.ToString() + ' ' + gridFaktury.SelectedRows[0].Cells["nazwisko"].Value.ToString();
-            lbNazwaFirmy.Text = gridFaktury.SelectedRows[0].Cells["nazwaFirmy"].Value.ToString();
-            lbAdresKlienta.Text = gridFaktury.SelectedRows[0].Cells["adresklient"].Value.ToString();
-            lbNazwaBanku.Text = gridFaktury.SelectedRows[0].Cells["nazwaBanku"].Value.ToString();
-            lbTelefon.Text = gridFaktury.SelectedRows[0].Cells["telefon"].Value.ToString();
+            lbNazwaKlienta.Text = gridFaktury.SelectedRows[0].Cells["imieN"].Value.ToString() + ' ' + gridFaktury.SelectedRows[0].Cells["nazwiskoN"].Value.ToString();
+            lbNazwaFirmy.Text = gridFaktury.SelectedRows[0].Cells["nazwaFirmyN"].Value.ToString();
+            lbAdresKlienta.Text = gridFaktury.SelectedRows[0].Cells["adresklientN"].Value.ToString();
+            lbNazwaBanku.Text = gridFaktury.SelectedRows[0].Cells["nazwaBankuN"].Value.ToString();
+            lbTelefon.Text = gridFaktury.SelectedRows[0].Cells["telefonN"].Value.ToString();
             grPozFaktur.Show();
             //MessageBox.Show(nrFaktury.ToString());
             nrTejFaktury = nrFaktury;
@@ -615,6 +613,7 @@ namespace wodomierz
             UstawienieNrKlientaDoFaktury();
         }
         string toImie;
+        string tonazwisko;
         string idKlienta; //globalne pole z idklient można używać
         private void UstawienieNrKlientaDoFaktury()
         {
@@ -622,7 +621,7 @@ namespace wodomierz
             string adresKlienta = dataGridView1.SelectedRows[0].Cells["adres1"].Value.ToString();
             //string nazwaBanku = dataGridView1.SelectedRows[0].Cells["nazwa2"].Value.ToString();
             string telefon = dataGridView1.SelectedRows[0].Cells["telefon1"].Value.ToString();
-            string nazwisko;
+
             poleNrKlienta.Text = idKlienta;
             grWyboruKlientaDoFaktury.Hide();
             lbNazwaKlienta.Text = dataGridView1.SelectedRows[0].Cells["nazwa2"].Value.ToString();
@@ -631,7 +630,7 @@ namespace wodomierz
             lbTelefon.Text = telefon;
             lbNazwaFirmy.Text = dataGridView1.SelectedRows[0].Cells["nazwaFirmy1"].Value.ToString();
             toImie = dataGridView1.SelectedRows[0].Cells["imie1"].Value.ToString();
-            nazwisko = dataGridView1.SelectedRows[0].Cells["nazwisko2"].Value.ToString();
+            tonazwisko = dataGridView1.SelectedRows[0].Cells["nazwisko2"].Value.ToString();
         }
 
         private void btWybierzKlientaDoFaktury_Click(object sender, EventArgs e)
