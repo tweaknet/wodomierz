@@ -3,3 +3,4 @@ bin/*
 .vs/*
 .vs/wodomierz/v16/.suo
 bin/Debug/wodomierz.exe.config
+obj/Debug/wodomierz.csprojAssemblyReference.cache
