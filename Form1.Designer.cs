@@ -31,7 +31,7 @@ namespace wodomierz
         public void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button1 = new System.Windows.Forms.Button();
             this.haslo = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -486,6 +486,7 @@ namespace wodomierz
             // 
             // btPoprawKlient
             // 
+            this.btPoprawKlient.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btPoprawKlient.Location = new System.Drawing.Point(90, 433);
             this.btPoprawKlient.Name = "btPoprawKlient";
             this.btPoprawKlient.Size = new System.Drawing.Size(75, 23);
@@ -496,6 +497,7 @@ namespace wodomierz
             // 
             // btDodajKlient
             // 
+            this.btDodajKlient.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btDodajKlient.Location = new System.Drawing.Point(9, 433);
             this.btDodajKlient.Name = "btDodajKlient";
             this.btDodajKlient.Size = new System.Drawing.Size(75, 23);
@@ -513,6 +515,7 @@ namespace wodomierz
             // 
             // usunKlient
             // 
+            this.usunKlient.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.usunKlient.Location = new System.Drawing.Point(171, 433);
             this.usunKlient.Name = "usunKlient";
             this.usunKlient.Size = new System.Drawing.Size(75, 23);
@@ -668,13 +671,13 @@ namespace wodomierz
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.grDodajStanWod);
             this.tabPage2.Controls.Add(this.btUsunStanWod);
-            this.tabPage2.Controls.Add(this.btDodajNowyStanWod);
-            this.tabPage2.Controls.Add(this.gridWodomierz);
-            this.tabPage2.Controls.Add(this.btDodajStanWod);
-            this.tabPage2.Controls.Add(this.button7);
             this.tabPage2.Controls.Add(this.btPoprawStanWod);
+            this.tabPage2.Controls.Add(this.btDodajNowyStanWod);
+            this.tabPage2.Controls.Add(this.btDodajStanWod);
+            this.tabPage2.Controls.Add(this.grDodajStanWod);
+            this.tabPage2.Controls.Add(this.gridWodomierz);
+            this.tabPage2.Controls.Add(this.button7);
             this.tabPage2.Controls.Add(this.button2);
             this.tabPage2.Controls.Add(this.button8);
             this.tabPage2.Location = new System.Drawing.Point(4, 26);
@@ -909,6 +912,7 @@ namespace wodomierz
             // 
             // btUsunStanWod
             // 
+            this.btUsunStanWod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btUsunStanWod.Location = new System.Drawing.Point(429, 433);
             this.btUsunStanWod.Name = "btUsunStanWod";
             this.btUsunStanWod.Size = new System.Drawing.Size(75, 23);
@@ -919,6 +923,7 @@ namespace wodomierz
             // 
             // btDodajNowyStanWod
             // 
+            this.btDodajNowyStanWod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btDodajNowyStanWod.Location = new System.Drawing.Point(160, 433);
             this.btDodajNowyStanWod.Name = "btDodajNowyStanWod";
             this.btDodajNowyStanWod.Size = new System.Drawing.Size(176, 23);
@@ -991,8 +996,8 @@ namespace wodomierz
             // wskazanieWodomierz
             // 
             this.wskazanieWodomierz.DataPropertyName = "wskazanieWodomierza";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.wskazanieWodomierz.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.wskazanieWodomierz.DefaultCellStyle = dataGridViewCellStyle5;
             this.wskazanieWodomierz.HeaderText = "Stan wodomierza";
             this.wskazanieWodomierz.Name = "wskazanieWodomierz";
             this.wskazanieWodomierz.ReadOnly = true;
@@ -1008,6 +1013,7 @@ namespace wodomierz
             // 
             // btDodajStanWod
             // 
+            this.btDodajStanWod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btDodajStanWod.Location = new System.Drawing.Point(6, 433);
             this.btDodajStanWod.Name = "btDodajStanWod";
             this.btDodajStanWod.Size = new System.Drawing.Size(148, 23);
@@ -1018,7 +1024,7 @@ namespace wodomierz
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(897, 433);
+            this.button7.Location = new System.Drawing.Point(784, 433);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(75, 23);
             this.button7.TabIndex = 2;
@@ -1028,6 +1034,7 @@ namespace wodomierz
             // 
             // btPoprawStanWod
             // 
+            this.btPoprawStanWod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btPoprawStanWod.Location = new System.Drawing.Point(347, 433);
             this.btPoprawStanWod.Name = "btPoprawStanWod";
             this.btPoprawStanWod.Size = new System.Drawing.Size(75, 23);
@@ -1608,7 +1615,8 @@ namespace wodomierz
             // 
             // gridFaktury
             // 
-            this.gridFaktury.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.gridFaktury.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridFaktury.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridFaktury.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1654,6 +1662,9 @@ namespace wodomierz
             // 
             // gridCennik
             // 
+            this.gridCennik.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gridCennik.BackgroundColor = System.Drawing.SystemColors.Window;
             this.gridCennik.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridCennik.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -1911,7 +1922,7 @@ namespace wodomierz
             this.Text = "Wodomierz";
             this.AutoSizeChanged += new System.EventHandler(this.button2_Click_1);
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.Resize += new System.EventHandler(this.label1_Click);
+            this.ResizeEnd += new System.EventHandler(this.ustawianieWilekosciTaba);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

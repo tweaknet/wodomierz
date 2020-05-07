@@ -1005,5 +1005,10 @@ namespace wodomierz
             PoprawKlient();
             UkryjPrzyciskiKlient();
         }
+
+        private void ustawianieWilekosciTaba(object sender, EventArgs e)
+        {
+            ustawianieWilekosciTaba();
+        }
     }
 }
