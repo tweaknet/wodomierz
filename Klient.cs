@@ -76,7 +76,6 @@ namespace wodomierz
             {
                 Console.WriteLine(e.Message);
             }
-            System.Windows.Forms.MessageBox.Show(tenidKlient);
             return tenidKlient;
         }
 

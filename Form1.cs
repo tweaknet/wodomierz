@@ -212,18 +212,18 @@ namespace wodomierz
             }
         }
 
-        void GridPozycjiFaktury(string nrFaktury)
-        {
-            //MessageBox.Show(nrFaktury);
-            using (SqlConnection sqlCon = new SqlConnection(connectionString))
-            {
-                sqlCon.Open();
-                SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT id,nrFaktury,telefon FROM faktura where nrFaktury = " + nrFaktury, sqlCon);
-                DataTable pozFaktury = new DataTable();
-                sqlDa.Fill(pozFaktury);
-                gridPozycjiFaktury.DataSource = pozFaktury;
-            }
-        }
+        //void GridPozycjiFaktury(string nrFaktury)
+        //{
+        //    //MessageBox.Show(nrFaktury);
+        //    using (SqlConnection sqlCon = new SqlConnection(connectionString))
+        //    {
+        //        sqlCon.Open();
+        //        SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT id,nrFaktury,telefon FROM faktura where nrFaktury = " + nrFaktury, sqlCon);
+        //        DataTable pozFaktury = new DataTable();
+        //        sqlDa.Fill(pozFaktury);
+        //        gridPozycjiFaktury.DataSource = pozFaktury;
+        //    }
+        //}
 
         void PopulatePositionComboBox()
         {
@@ -576,7 +576,7 @@ namespace wodomierz
                 dataGridView1.DataSource = klient;
                 int nRowIndex = dataGridView1.Rows.Count - 1;
                 dataGridView1.Rows[nRowIndex].Selected = true;
-                dataGridView1.CurrentCell = dataGridView1.Rows[nRowIndex].Cells[1];
+                dataGridView1.CurrentCell = dataGridView1.Rows[nRowIndex].Cells[2];
             }
         }
 
@@ -887,6 +887,7 @@ namespace wodomierz
             usunKlient.Hide();
             gridKlient.Hide();
             grupaDodajKlient.Show();
+            filtrNazwisko.Hide();
         }
 
         private void btPoprawKlient_Click(object sender, EventArgs e)
@@ -911,6 +912,7 @@ namespace wodomierz
             usunKlient.Show();
             gridKlient.Show();
             grupaDodajKlient.Hide();
+            filtrNazwisko.Show();
         }
 
         private void btWrocKlient_Click(object sender, EventArgs e)
