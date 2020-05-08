@@ -1022,6 +1022,7 @@ namespace wodomierz
         {
             UkryjButCennik();
             nowyCennik = true;
+            grCennik.Text = "Dodaj stawkę cennika";
         }
 
         private void UkryjButCennik()
@@ -1057,28 +1058,33 @@ namespace wodomierz
             grDatoDo.Value = Convert.ToDateTime(gridCennik.CurrentRow.Cells["txtDataDo"].Value);
             poleNettoCennik.Text = Convert.ToString(gridCennik.CurrentRow.Cells["txtNetto"].Value);
             poleVatCennik.Text = Convert.ToString(gridCennik.CurrentRow.Cells["txtsymbolVat"].Value);
-            idCennik = Convert.ToInt32(gridCennik.CurrentRow.Cells["idC"].Value);            
+            idCennik = Convert.ToInt32(gridCennik.CurrentRow.Cells["idC"].Value);
+            grCennik.Text = "Popraw stawkę cennika";
         }
 
         private void btZapiszCennik_Click(object sender, EventArgs e)
         {
-            if (nowyCennik)
-            {
-                PokazButCennik();
-                Cennik.DodajCennik(Convert.ToDateTime(grDataod.Value), Convert.ToDateTime(grDatoDo.Value), Convert.ToDecimal(poleNettoCennik.Text),
-                    Convert.ToInt32(poleVatCennik.Text));
-                CzyszczeniePolGrCennik();
-                GridCennik();
-            }
+            if (poleNettoCennik.Text == "") { MessageBox.Show("Wpisz kwotę"); }
+            else if (poleVatCennik.Text == "") { MessageBox.Show("Wpisz stawkę vat"); }
             else
             {
-                PokazButCennik();
-                Cennik.PoprawCennik(idCennik, Convert.ToDateTime(grDataod.Value), Convert.ToDateTime(grDatoDo.Value), Convert.ToDecimal(poleNettoCennik.Text), 
-                    Convert.ToInt32(poleVatCennik.Text));
-                CzyszczeniePolGrCennik();
-                GridCennik();
+                if (nowyCennik)
+                    {
+                        PokazButCennik();
+                        Cennik.DodajCennik(Convert.ToDateTime(grDataod.Value), Convert.ToDateTime(grDatoDo.Value), Convert.ToDecimal(poleNettoCennik.Text),
+                            Convert.ToInt32(poleVatCennik.Text));
+                        CzyszczeniePolGrCennik();
+                        GridCennik();
+                    }
+                    else
+                    {
+                        PokazButCennik();
+                        Cennik.PoprawCennik(idCennik, Convert.ToDateTime(grDataod.Value), Convert.ToDateTime(grDatoDo.Value), Convert.ToDecimal(poleNettoCennik.Text), 
+                            Convert.ToInt32(poleVatCennik.Text));
+                        CzyszczeniePolGrCennik();
+                        GridCennik();
+                    }
             }
-
         }
         private void CzyszczeniePolGrCennik()
         {
@@ -1086,6 +1092,12 @@ namespace wodomierz
             grDatoDo.Value = Convert.ToDateTime("2020-06-01");
             poleNettoCennik.Text = "";
             poleVatCennik.Text = "";
+        }
+
+        private void btFiltr_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Nie baw się bo jeszcze nie działa i popsujesz :).");
+            GridFaktury();
         }
     }
 }

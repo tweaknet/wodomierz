@@ -32,7 +32,7 @@ namespace wodomierz
         public void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button1 = new System.Windows.Forms.Button();
             this.haslo = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -1044,8 +1044,8 @@ namespace wodomierz
             // wskazanieWodomierz
             // 
             this.wskazanieWodomierz.DataPropertyName = "wskazanieWodomierza";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.wskazanieWodomierz.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.wskazanieWodomierz.DefaultCellStyle = dataGridViewCellStyle4;
             this.wskazanieWodomierz.HeaderText = "Stan wodomierza";
             this.wskazanieWodomierz.Name = "wskazanieWodomierz";
             this.wskazanieWodomierz.ReadOnly = true;
@@ -1579,6 +1579,7 @@ namespace wodomierz
             this.btFiltr.TabIndex = 12;
             this.btFiltr.Text = "Filtr";
             this.btFiltr.UseVisualStyleBackColor = true;
+            this.btFiltr.Click += new System.EventHandler(this.btFiltr_Click);
             // 
             // btUsunFakture
             // 
@@ -1784,7 +1785,7 @@ namespace wodomierz
             this.grCennik.Controls.Add(this.btZapiszCennik);
             this.grCennik.Location = new System.Drawing.Point(30, 55);
             this.grCennik.Name = "grCennik";
-            this.grCennik.Size = new System.Drawing.Size(727, 215);
+            this.grCennik.Size = new System.Drawing.Size(555, 215);
             this.grCennik.TabIndex = 5;
             this.grCennik.TabStop = false;
             this.grCennik.Text = "Dodaj/popraw stawkę cennika";
@@ -1859,7 +1860,7 @@ namespace wodomierz
             // 
             // btWrocCennik
             // 
-            this.btWrocCennik.Location = new System.Drawing.Point(516, 151);
+            this.btWrocCennik.Location = new System.Drawing.Point(393, 186);
             this.btWrocCennik.Name = "btWrocCennik";
             this.btWrocCennik.Size = new System.Drawing.Size(75, 23);
             this.btWrocCennik.TabIndex = 1;
@@ -1869,7 +1870,7 @@ namespace wodomierz
             // 
             // btZapiszCennik
             // 
-            this.btZapiszCennik.Location = new System.Drawing.Point(618, 151);
+            this.btZapiszCennik.Location = new System.Drawing.Point(474, 186);
             this.btZapiszCennik.Name = "btZapiszCennik";
             this.btZapiszCennik.Size = new System.Drawing.Size(75, 23);
             this.btZapiszCennik.TabIndex = 0;
@@ -1879,6 +1880,7 @@ namespace wodomierz
             // 
             // btUsunCennik
             // 
+            this.btUsunCennik.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btUsunCennik.Location = new System.Drawing.Point(171, 433);
             this.btUsunCennik.Name = "btUsunCennik";
             this.btUsunCennik.Size = new System.Drawing.Size(75, 23);
@@ -1889,6 +1891,7 @@ namespace wodomierz
             // 
             // btPoprawCennik
             // 
+            this.btPoprawCennik.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btPoprawCennik.Location = new System.Drawing.Point(90, 433);
             this.btPoprawCennik.Name = "btPoprawCennik";
             this.btPoprawCennik.Size = new System.Drawing.Size(75, 23);
@@ -1899,6 +1902,7 @@ namespace wodomierz
             // 
             // btDodajCennik
             // 
+            this.btDodajCennik.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btDodajCennik.Location = new System.Drawing.Point(9, 433);
             this.btDodajCennik.Name = "btDodajCennik";
             this.btDodajCennik.Size = new System.Drawing.Size(75, 23);
@@ -1928,7 +1932,7 @@ namespace wodomierz
             this.gridCennik.ReadOnly = true;
             this.gridCennik.RowHeadersVisible = false;
             this.gridCennik.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridCennik.Size = new System.Drawing.Size(927, 413);
+            this.gridCennik.Size = new System.Drawing.Size(994, 413);
             this.gridCennik.TabIndex = 1;
             this.gridCennik.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCennik_CellValueChanged);
             // 
