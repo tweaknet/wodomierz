@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using System.Windows.Forms;
 
 namespace wodomierz
 {
@@ -31,7 +32,7 @@ namespace wodomierz
         public void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button1 = new System.Windows.Forms.Button();
             this.haslo = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -62,6 +63,14 @@ namespace wodomierz
             this.filtrNazwisko = new System.Windows.Forms.TextBox();
             this.usunKlient = new System.Windows.Forms.Button();
             this.gridKlient = new System.Windows.Forms.DataGridView();
+            this.idklientklienci = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idklient3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nazwisko1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nazwaFirmy2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adres2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kodPocztowy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefon2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -76,6 +85,11 @@ namespace wodomierz
             this.btWybStWod = new System.Windows.Forms.Button();
             this.btWrocKlientStWod = new System.Windows.Forms.Button();
             this.gridWybKlientaStanWod = new System.Windows.Forms.DataGridView();
+            this.idStwod = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idKlientStWod = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nazwaFirmyStWod = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imieStWod = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nazwiskoStWod = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbNazwaKlientaStanWod = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.poleWskazanieWod = new System.Windows.Forms.TextBox();
@@ -151,8 +165,41 @@ namespace wodomierz
             this.btPoprawFakture = new System.Windows.Forms.Button();
             this.btDodajFakture = new System.Windows.Forms.Button();
             this.gridFaktury = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idKlient = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nrFaktury = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imieN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nazwiskoN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataWystawieniaN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.terminPlatnosciN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nettoN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nazwaFirmyN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.formaPlatnosciN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adresKlientN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nazwaBankuN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefonN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.symbolVatN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.grCennik = new System.Windows.Forms.GroupBox();
+            this.grDatoDo = new System.Windows.Forms.DateTimePicker();
+            this.grDataod = new System.Windows.Forms.DateTimePicker();
+            this.poleVatCennik = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.poleNettoCennik = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.btWrocCennik = new System.Windows.Forms.Button();
+            this.btZapiszCennik = new System.Windows.Forms.Button();
+            this.btUsunCennik = new System.Windows.Forms.Button();
+            this.btPoprawCennik = new System.Windows.Forms.Button();
+            this.btDodajCennik = new System.Windows.Forms.Button();
             this.gridCennik = new System.Windows.Forms.DataGridView();
+            this.idC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtDataOd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtDataDo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtNetto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtsymbolVat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.GridPracownicy = new System.Windows.Forms.DataGridView();
             this.txtEmployeeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -182,38 +229,6 @@ namespace wodomierz
             this.nazwa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idklient1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idklientklienci = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idklient3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imie = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazwisko1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazwaFirmy2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adres2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kodPocztowy = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefon2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idKlient = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nrFaktury = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imieN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazwiskoN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataWystawieniaN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.terminPlatnosciN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nettoN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazwaFirmyN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.formaPlatnosciN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adresKlientN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazwaBankuN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefonN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.symbolVatN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idStwod = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idKlientStWod = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazwaFirmyStWod = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imieStWod = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazwiskoStWod = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtAge = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtsymbolVat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.grupaDodajKlient.SuspendLayout();
@@ -233,6 +248,7 @@ namespace wodomierz
             ((System.ComponentModel.ISupportInitialize)(this.gridPozycjiFaktury)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridFaktury)).BeginInit();
             this.tabPage3.SuspendLayout();
+            this.grCennik.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridCennik)).BeginInit();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridPracownicy)).BeginInit();
@@ -567,6 +583,67 @@ namespace wodomierz
             this.gridKlient.TabIndex = 4;
             this.gridKlient.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridKlient_CellContentClick);
             // 
+            // idklientklienci
+            // 
+            this.idklientklienci.DataPropertyName = "id";
+            this.idklientklienci.HeaderText = "id";
+            this.idklientklienci.Name = "idklientklienci";
+            this.idklientklienci.ReadOnly = true;
+            this.idklientklienci.Visible = false;
+            // 
+            // idklient3
+            // 
+            this.idklient3.DataPropertyName = "idKlient";
+            this.idklient3.HeaderText = "Nr klienta";
+            this.idklient3.Name = "idklient3";
+            this.idklient3.ReadOnly = true;
+            // 
+            // imie
+            // 
+            this.imie.DataPropertyName = "imie";
+            this.imie.HeaderText = "Imie";
+            this.imie.Name = "imie";
+            this.imie.ReadOnly = true;
+            // 
+            // nazwisko1
+            // 
+            this.nazwisko1.DataPropertyName = "nazwisko";
+            this.nazwisko1.HeaderText = "Nazwisko";
+            this.nazwisko1.Name = "nazwisko1";
+            this.nazwisko1.ReadOnly = true;
+            this.nazwisko1.Width = 150;
+            // 
+            // nazwaFirmy2
+            // 
+            this.nazwaFirmy2.DataPropertyName = "nazwaFirmy";
+            this.nazwaFirmy2.HeaderText = "Nazwa firmy";
+            this.nazwaFirmy2.Name = "nazwaFirmy2";
+            this.nazwaFirmy2.ReadOnly = true;
+            this.nazwaFirmy2.Width = 150;
+            // 
+            // adres2
+            // 
+            this.adres2.DataPropertyName = "adres";
+            this.adres2.HeaderText = "Adres";
+            this.adres2.Name = "adres2";
+            this.adres2.ReadOnly = true;
+            this.adres2.Width = 250;
+            // 
+            // kodPocztowy
+            // 
+            this.kodPocztowy.DataPropertyName = "kodPocztowy";
+            this.kodPocztowy.HeaderText = "Kod";
+            this.kodPocztowy.Name = "kodPocztowy";
+            this.kodPocztowy.ReadOnly = true;
+            this.kodPocztowy.Width = 70;
+            // 
+            // telefon2
+            // 
+            this.telefon2.DataPropertyName = "telefon";
+            this.telefon2.HeaderText = "Telefon";
+            this.telefon2.Name = "telefon2";
+            this.telefon2.ReadOnly = true;
+            // 
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -752,6 +829,45 @@ namespace wodomierz
             this.gridWybKlientaStanWod.TabIndex = 0;
             this.gridWybKlientaStanWod.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridWybKlientaStanWod_CellContentClick);
             // 
+            // idStwod
+            // 
+            this.idStwod.DataPropertyName = "id";
+            this.idStwod.HeaderText = "Id";
+            this.idStwod.Name = "idStwod";
+            this.idStwod.ReadOnly = true;
+            this.idStwod.Width = 30;
+            // 
+            // idKlientStWod
+            // 
+            this.idKlientStWod.DataPropertyName = "idklient";
+            this.idKlientStWod.HeaderText = "Id klienta";
+            this.idKlientStWod.Name = "idKlientStWod";
+            this.idKlientStWod.ReadOnly = true;
+            // 
+            // nazwaFirmyStWod
+            // 
+            this.nazwaFirmyStWod.DataPropertyName = "nazwaFirmy";
+            this.nazwaFirmyStWod.HeaderText = "Nazwa firmy";
+            this.nazwaFirmyStWod.Name = "nazwaFirmyStWod";
+            this.nazwaFirmyStWod.ReadOnly = true;
+            this.nazwaFirmyStWod.Width = 130;
+            // 
+            // imieStWod
+            // 
+            this.imieStWod.DataPropertyName = "imie";
+            this.imieStWod.HeaderText = "Imię";
+            this.imieStWod.Name = "imieStWod";
+            this.imieStWod.ReadOnly = true;
+            this.imieStWod.Width = 80;
+            // 
+            // nazwiskoStWod
+            // 
+            this.nazwiskoStWod.DataPropertyName = "nazwisko";
+            this.nazwiskoStWod.HeaderText = "Nazwisko";
+            this.nazwiskoStWod.Name = "nazwiskoStWod";
+            this.nazwiskoStWod.ReadOnly = true;
+            this.nazwiskoStWod.Width = 125;
+            // 
             // lbNazwaKlientaStanWod
             // 
             this.lbNazwaKlientaStanWod.AutoSize = true;
@@ -928,8 +1044,8 @@ namespace wodomierz
             // wskazanieWodomierz
             // 
             this.wskazanieWodomierz.DataPropertyName = "wskazanieWodomierza";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.wskazanieWodomierz.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.wskazanieWodomierz.DefaultCellStyle = dataGridViewCellStyle2;
             this.wskazanieWodomierz.HeaderText = "Stan wodomierza";
             this.wskazanieWodomierz.Name = "wskazanieWodomierz";
             this.wskazanieWodomierz.ReadOnly = true;
@@ -1531,8 +1647,120 @@ namespace wodomierz
             this.gridFaktury.TabIndex = 6;
             this.gridFaktury.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridFaktury_CellDoubleClick);
             // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // idKlient
+            // 
+            this.idKlient.DataPropertyName = "idKlient";
+            this.idKlient.HeaderText = "idKlient";
+            this.idKlient.Name = "idKlient";
+            this.idKlient.ReadOnly = true;
+            this.idKlient.Visible = false;
+            this.idKlient.Width = 160;
+            // 
+            // nrFaktury
+            // 
+            this.nrFaktury.DataPropertyName = "nrFaktury";
+            this.nrFaktury.HeaderText = "Nr faktury";
+            this.nrFaktury.Name = "nrFaktury";
+            this.nrFaktury.ReadOnly = true;
+            this.nrFaktury.Width = 125;
+            // 
+            // imieN
+            // 
+            this.imieN.DataPropertyName = "imie";
+            this.imieN.HeaderText = "Imie";
+            this.imieN.Name = "imieN";
+            this.imieN.ReadOnly = true;
+            this.imieN.Width = 120;
+            // 
+            // nazwiskoN
+            // 
+            this.nazwiskoN.DataPropertyName = "nazwisko";
+            this.nazwiskoN.HeaderText = "Nazwisko";
+            this.nazwiskoN.Name = "nazwiskoN";
+            this.nazwiskoN.ReadOnly = true;
+            this.nazwiskoN.Width = 180;
+            // 
+            // dataWystawieniaN
+            // 
+            this.dataWystawieniaN.DataPropertyName = "dataWystawienia";
+            this.dataWystawieniaN.HeaderText = "Data wystawienia";
+            this.dataWystawieniaN.Name = "dataWystawieniaN";
+            this.dataWystawieniaN.ReadOnly = true;
+            // 
+            // terminPlatnosciN
+            // 
+            this.terminPlatnosciN.DataPropertyName = "terminPlatnosci";
+            this.terminPlatnosciN.HeaderText = "Termin płatności";
+            this.terminPlatnosciN.Name = "terminPlatnosciN";
+            this.terminPlatnosciN.ReadOnly = true;
+            // 
+            // nettoN
+            // 
+            this.nettoN.DataPropertyName = "netto";
+            this.nettoN.HeaderText = "Netto";
+            this.nettoN.Name = "nettoN";
+            this.nettoN.ReadOnly = true;
+            // 
+            // nazwaFirmyN
+            // 
+            this.nazwaFirmyN.DataPropertyName = "nazwaFirmy";
+            this.nazwaFirmyN.HeaderText = "Nazwa firmy";
+            this.nazwaFirmyN.Name = "nazwaFirmyN";
+            this.nazwaFirmyN.ReadOnly = true;
+            // 
+            // formaPlatnosciN
+            // 
+            this.formaPlatnosciN.DataPropertyName = "formaPlatnosci";
+            this.formaPlatnosciN.HeaderText = "Forma płatności";
+            this.formaPlatnosciN.Name = "formaPlatnosciN";
+            this.formaPlatnosciN.ReadOnly = true;
+            // 
+            // adresKlientN
+            // 
+            this.adresKlientN.DataPropertyName = "adresKlient";
+            this.adresKlientN.HeaderText = "Adres";
+            this.adresKlientN.Name = "adresKlientN";
+            this.adresKlientN.ReadOnly = true;
+            this.adresKlientN.Visible = false;
+            // 
+            // nazwaBankuN
+            // 
+            this.nazwaBankuN.DataPropertyName = "nazwaBanku";
+            this.nazwaBankuN.HeaderText = "nazwaBanku";
+            this.nazwaBankuN.Name = "nazwaBankuN";
+            this.nazwaBankuN.ReadOnly = true;
+            this.nazwaBankuN.Visible = false;
+            // 
+            // telefonN
+            // 
+            this.telefonN.DataPropertyName = "telefon";
+            this.telefonN.HeaderText = "telefon";
+            this.telefonN.Name = "telefonN";
+            this.telefonN.ReadOnly = true;
+            this.telefonN.Visible = false;
+            // 
+            // symbolVatN
+            // 
+            this.symbolVatN.DataPropertyName = "symbolVat";
+            this.symbolVatN.HeaderText = "symbolVatN";
+            this.symbolVatN.Name = "symbolVatN";
+            this.symbolVatN.ReadOnly = true;
+            this.symbolVatN.Visible = false;
+            // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.grCennik);
+            this.tabPage3.Controls.Add(this.btUsunCennik);
+            this.tabPage3.Controls.Add(this.btPoprawCennik);
+            this.tabPage3.Controls.Add(this.btDodajCennik);
             this.tabPage3.Controls.Add(this.gridCennik);
             this.tabPage3.Location = new System.Drawing.Point(4, 26);
             this.tabPage3.Name = "tabPage3";
@@ -1541,6 +1769,143 @@ namespace wodomierz
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Cennik";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // grCennik
+            // 
+            this.grCennik.Controls.Add(this.grDatoDo);
+            this.grCennik.Controls.Add(this.grDataod);
+            this.grCennik.Controls.Add(this.poleVatCennik);
+            this.grCennik.Controls.Add(this.label20);
+            this.grCennik.Controls.Add(this.poleNettoCennik);
+            this.grCennik.Controls.Add(this.label19);
+            this.grCennik.Controls.Add(this.label18);
+            this.grCennik.Controls.Add(this.label17);
+            this.grCennik.Controls.Add(this.btWrocCennik);
+            this.grCennik.Controls.Add(this.btZapiszCennik);
+            this.grCennik.Location = new System.Drawing.Point(30, 55);
+            this.grCennik.Name = "grCennik";
+            this.grCennik.Size = new System.Drawing.Size(727, 215);
+            this.grCennik.TabIndex = 5;
+            this.grCennik.TabStop = false;
+            this.grCennik.Text = "Dodaj/popraw stawkę cennika";
+            // 
+            // grDatoDo
+            // 
+            this.grDatoDo.CustomFormat = "yyyy-MM-dd";
+            this.grDatoDo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.grDatoDo.Location = new System.Drawing.Point(168, 48);
+            this.grDatoDo.Name = "grDatoDo";
+            this.grDatoDo.Size = new System.Drawing.Size(123, 22);
+            this.grDatoDo.TabIndex = 11;
+            // 
+            // grDataod
+            // 
+            this.grDataod.CustomFormat = "yyyy-MM-dd";
+            this.grDataod.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.grDataod.Location = new System.Drawing.Point(26, 48);
+            this.grDataod.Name = "grDataod";
+            this.grDataod.Size = new System.Drawing.Size(123, 22);
+            this.grDataod.TabIndex = 10;
+            // 
+            // poleVatCennik
+            // 
+            this.poleVatCennik.Location = new System.Drawing.Point(430, 48);
+            this.poleVatCennik.Name = "poleVatCennik";
+            this.poleVatCennik.Size = new System.Drawing.Size(100, 22);
+            this.poleVatCennik.TabIndex = 9;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(433, 29);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(100, 16);
+            this.label20.TabIndex = 8;
+            this.label20.Text = "Stawka % vat";
+            // 
+            // poleNettoCennik
+            // 
+            this.poleNettoCennik.Location = new System.Drawing.Point(311, 48);
+            this.poleNettoCennik.Name = "poleNettoCennik";
+            this.poleNettoCennik.Size = new System.Drawing.Size(100, 22);
+            this.poleNettoCennik.TabIndex = 7;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(314, 29);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(45, 16);
+            this.label19.TabIndex = 6;
+            this.label19.Text = "Netto";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(171, 29);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(63, 16);
+            this.label18.TabIndex = 4;
+            this.label18.Text = "Data do";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(29, 29);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(63, 16);
+            this.label17.TabIndex = 2;
+            this.label17.Text = "Data od";
+            // 
+            // btWrocCennik
+            // 
+            this.btWrocCennik.Location = new System.Drawing.Point(516, 151);
+            this.btWrocCennik.Name = "btWrocCennik";
+            this.btWrocCennik.Size = new System.Drawing.Size(75, 23);
+            this.btWrocCennik.TabIndex = 1;
+            this.btWrocCennik.Text = "Wróć";
+            this.btWrocCennik.UseVisualStyleBackColor = true;
+            this.btWrocCennik.Click += new System.EventHandler(this.btWrocCennik_Click);
+            // 
+            // btZapiszCennik
+            // 
+            this.btZapiszCennik.Location = new System.Drawing.Point(618, 151);
+            this.btZapiszCennik.Name = "btZapiszCennik";
+            this.btZapiszCennik.Size = new System.Drawing.Size(75, 23);
+            this.btZapiszCennik.TabIndex = 0;
+            this.btZapiszCennik.Text = "Zapisz";
+            this.btZapiszCennik.UseVisualStyleBackColor = true;
+            this.btZapiszCennik.Click += new System.EventHandler(this.btZapiszCennik_Click);
+            // 
+            // btUsunCennik
+            // 
+            this.btUsunCennik.Location = new System.Drawing.Point(171, 433);
+            this.btUsunCennik.Name = "btUsunCennik";
+            this.btUsunCennik.Size = new System.Drawing.Size(75, 23);
+            this.btUsunCennik.TabIndex = 4;
+            this.btUsunCennik.Text = "Usuń";
+            this.btUsunCennik.UseVisualStyleBackColor = true;
+            this.btUsunCennik.Click += new System.EventHandler(this.btUsunCennik_Click);
+            // 
+            // btPoprawCennik
+            // 
+            this.btPoprawCennik.Location = new System.Drawing.Point(90, 433);
+            this.btPoprawCennik.Name = "btPoprawCennik";
+            this.btPoprawCennik.Size = new System.Drawing.Size(75, 23);
+            this.btPoprawCennik.TabIndex = 3;
+            this.btPoprawCennik.Text = "Popraw";
+            this.btPoprawCennik.UseVisualStyleBackColor = true;
+            this.btPoprawCennik.Click += new System.EventHandler(this.btPoprawCennik_Click);
+            // 
+            // btDodajCennik
+            // 
+            this.btDodajCennik.Location = new System.Drawing.Point(9, 433);
+            this.btDodajCennik.Name = "btDodajCennik";
+            this.btDodajCennik.Size = new System.Drawing.Size(75, 23);
+            this.btDodajCennik.TabIndex = 2;
+            this.btDodajCennik.Text = "Dodaj";
+            this.btDodajCennik.UseVisualStyleBackColor = true;
+            this.btDodajCennik.Click += new System.EventHandler(this.btDodajCennik_Click);
             // 
             // gridCennik
             // 
@@ -1553,18 +1918,57 @@ namespace wodomierz
             this.gridCennik.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridCennik.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridCennik.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.txtAge,
+            this.idC,
+            this.txtDataOd,
+            this.txtDataDo,
+            this.txtNetto,
             this.txtsymbolVat});
-            this.gridCennik.Location = new System.Drawing.Point(34, 30);
+            this.gridCennik.Location = new System.Drawing.Point(9, 14);
             this.gridCennik.Name = "gridCennik";
             this.gridCennik.ReadOnly = true;
             this.gridCennik.RowHeadersVisible = false;
-            this.gridCennik.Size = new System.Drawing.Size(927, 405);
+            this.gridCennik.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridCennik.Size = new System.Drawing.Size(927, 413);
             this.gridCennik.TabIndex = 1;
             this.gridCennik.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCennik_CellValueChanged);
+            // 
+            // idC
+            // 
+            this.idC.DataPropertyName = "id";
+            this.idC.HeaderText = "ID";
+            this.idC.Name = "idC";
+            this.idC.ReadOnly = true;
+            this.idC.Visible = false;
+            this.idC.Width = 20;
+            // 
+            // txtDataOd
+            // 
+            this.txtDataOd.DataPropertyName = "dataOd";
+            this.txtDataOd.HeaderText = "Data od";
+            this.txtDataOd.Name = "txtDataOd";
+            this.txtDataOd.ReadOnly = true;
+            // 
+            // txtDataDo
+            // 
+            this.txtDataDo.DataPropertyName = "dataDo";
+            this.txtDataDo.HeaderText = "Data do";
+            this.txtDataDo.Name = "txtDataDo";
+            this.txtDataDo.ReadOnly = true;
+            // 
+            // txtNetto
+            // 
+            this.txtNetto.DataPropertyName = "netto";
+            this.txtNetto.HeaderText = "Netto";
+            this.txtNetto.Name = "txtNetto";
+            this.txtNetto.ReadOnly = true;
+            // 
+            // txtsymbolVat
+            // 
+            this.txtsymbolVat.DataPropertyName = "symbolVat";
+            this.txtsymbolVat.HeaderText = "Stawka vat";
+            this.txtsymbolVat.Name = "txtsymbolVat";
+            this.txtsymbolVat.ReadOnly = true;
+            this.txtsymbolVat.Width = 130;
             // 
             // tabPage5
             // 
@@ -1807,252 +2211,6 @@ namespace wodomierz
             this.id_.Name = "id_";
             this.id_.Visible = false;
             // 
-            // idklientklienci
-            // 
-            this.idklientklienci.DataPropertyName = "id";
-            this.idklientklienci.HeaderText = "id";
-            this.idklientklienci.Name = "idklientklienci";
-            this.idklientklienci.ReadOnly = true;
-            this.idklientklienci.Visible = false;
-            // 
-            // idklient3
-            // 
-            this.idklient3.DataPropertyName = "idKlient";
-            this.idklient3.HeaderText = "Nr klienta";
-            this.idklient3.Name = "idklient3";
-            this.idklient3.ReadOnly = true;
-            // 
-            // imie
-            // 
-            this.imie.DataPropertyName = "imie";
-            this.imie.HeaderText = "Imie";
-            this.imie.Name = "imie";
-            this.imie.ReadOnly = true;
-            // 
-            // nazwisko1
-            // 
-            this.nazwisko1.DataPropertyName = "nazwisko";
-            this.nazwisko1.HeaderText = "Nazwisko";
-            this.nazwisko1.Name = "nazwisko1";
-            this.nazwisko1.ReadOnly = true;
-            this.nazwisko1.Width = 150;
-            // 
-            // nazwaFirmy2
-            // 
-            this.nazwaFirmy2.DataPropertyName = "nazwaFirmy";
-            this.nazwaFirmy2.HeaderText = "Nazwa firmy";
-            this.nazwaFirmy2.Name = "nazwaFirmy2";
-            this.nazwaFirmy2.ReadOnly = true;
-            this.nazwaFirmy2.Width = 150;
-            // 
-            // adres2
-            // 
-            this.adres2.DataPropertyName = "adres";
-            this.adres2.HeaderText = "Adres";
-            this.adres2.Name = "adres2";
-            this.adres2.ReadOnly = true;
-            this.adres2.Width = 250;
-            // 
-            // kodPocztowy
-            // 
-            this.kodPocztowy.DataPropertyName = "kodPocztowy";
-            this.kodPocztowy.HeaderText = "Kod";
-            this.kodPocztowy.Name = "kodPocztowy";
-            this.kodPocztowy.ReadOnly = true;
-            this.kodPocztowy.Width = 70;
-            // 
-            // telefon2
-            // 
-            this.telefon2.DataPropertyName = "telefon";
-            this.telefon2.HeaderText = "Telefon";
-            this.telefon2.Name = "telefon2";
-            this.telefon2.ReadOnly = true;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            // 
-            // idKlient
-            // 
-            this.idKlient.DataPropertyName = "idKlient";
-            this.idKlient.HeaderText = "idKlient";
-            this.idKlient.Name = "idKlient";
-            this.idKlient.ReadOnly = true;
-            this.idKlient.Visible = false;
-            this.idKlient.Width = 160;
-            // 
-            // nrFaktury
-            // 
-            this.nrFaktury.DataPropertyName = "nrFaktury";
-            this.nrFaktury.HeaderText = "Nr faktury";
-            this.nrFaktury.Name = "nrFaktury";
-            this.nrFaktury.ReadOnly = true;
-            this.nrFaktury.Width = 125;
-            // 
-            // imieN
-            // 
-            this.imieN.DataPropertyName = "imie";
-            this.imieN.HeaderText = "Imie";
-            this.imieN.Name = "imieN";
-            this.imieN.ReadOnly = true;
-            this.imieN.Width = 120;
-            // 
-            // nazwiskoN
-            // 
-            this.nazwiskoN.DataPropertyName = "nazwisko";
-            this.nazwiskoN.HeaderText = "Nazwisko";
-            this.nazwiskoN.Name = "nazwiskoN";
-            this.nazwiskoN.ReadOnly = true;
-            this.nazwiskoN.Width = 180;
-            // 
-            // dataWystawieniaN
-            // 
-            this.dataWystawieniaN.DataPropertyName = "dataWystawienia";
-            this.dataWystawieniaN.HeaderText = "Data wystawienia";
-            this.dataWystawieniaN.Name = "dataWystawieniaN";
-            this.dataWystawieniaN.ReadOnly = true;
-            // 
-            // terminPlatnosciN
-            // 
-            this.terminPlatnosciN.DataPropertyName = "terminPlatnosci";
-            this.terminPlatnosciN.HeaderText = "Termin płatności";
-            this.terminPlatnosciN.Name = "terminPlatnosciN";
-            this.terminPlatnosciN.ReadOnly = true;
-            // 
-            // nettoN
-            // 
-            this.nettoN.DataPropertyName = "netto";
-            this.nettoN.HeaderText = "Netto";
-            this.nettoN.Name = "nettoN";
-            this.nettoN.ReadOnly = true;
-            // 
-            // nazwaFirmyN
-            // 
-            this.nazwaFirmyN.DataPropertyName = "nazwaFirmy";
-            this.nazwaFirmyN.HeaderText = "Nazwa firmy";
-            this.nazwaFirmyN.Name = "nazwaFirmyN";
-            this.nazwaFirmyN.ReadOnly = true;
-            // 
-            // formaPlatnosciN
-            // 
-            this.formaPlatnosciN.DataPropertyName = "formaPlatnosci";
-            this.formaPlatnosciN.HeaderText = "Forma płatności";
-            this.formaPlatnosciN.Name = "formaPlatnosciN";
-            this.formaPlatnosciN.ReadOnly = true;
-            // 
-            // adresKlientN
-            // 
-            this.adresKlientN.DataPropertyName = "adresKlient";
-            this.adresKlientN.HeaderText = "Adres";
-            this.adresKlientN.Name = "adresKlientN";
-            this.adresKlientN.ReadOnly = true;
-            this.adresKlientN.Visible = false;
-            // 
-            // nazwaBankuN
-            // 
-            this.nazwaBankuN.DataPropertyName = "nazwaBanku";
-            this.nazwaBankuN.HeaderText = "nazwaBanku";
-            this.nazwaBankuN.Name = "nazwaBankuN";
-            this.nazwaBankuN.ReadOnly = true;
-            this.nazwaBankuN.Visible = false;
-            // 
-            // telefonN
-            // 
-            this.telefonN.DataPropertyName = "telefon";
-            this.telefonN.HeaderText = "telefon";
-            this.telefonN.Name = "telefonN";
-            this.telefonN.ReadOnly = true;
-            this.telefonN.Visible = false;
-            // 
-            // symbolVatN
-            // 
-            this.symbolVatN.DataPropertyName = "symbolVat";
-            this.symbolVatN.HeaderText = "symbolVatN";
-            this.symbolVatN.Name = "symbolVatN";
-            this.symbolVatN.ReadOnly = true;
-            this.symbolVatN.Visible = false;
-            // 
-            // idStwod
-            // 
-            this.idStwod.DataPropertyName = "id";
-            this.idStwod.HeaderText = "Id";
-            this.idStwod.Name = "idStwod";
-            this.idStwod.ReadOnly = true;
-            this.idStwod.Width = 30;
-            // 
-            // idKlientStWod
-            // 
-            this.idKlientStWod.DataPropertyName = "idklient";
-            this.idKlientStWod.HeaderText = "Id klienta";
-            this.idKlientStWod.Name = "idKlientStWod";
-            this.idKlientStWod.ReadOnly = true;
-            // 
-            // nazwaFirmyStWod
-            // 
-            this.nazwaFirmyStWod.DataPropertyName = "nazwaFirmy";
-            this.nazwaFirmyStWod.HeaderText = "Nazwa firmy";
-            this.nazwaFirmyStWod.Name = "nazwaFirmyStWod";
-            this.nazwaFirmyStWod.ReadOnly = true;
-            this.nazwaFirmyStWod.Width = 130;
-            // 
-            // imieStWod
-            // 
-            this.imieStWod.DataPropertyName = "imie";
-            this.imieStWod.HeaderText = "Imię";
-            this.imieStWod.Name = "imieStWod";
-            this.imieStWod.ReadOnly = true;
-            this.imieStWod.Width = 80;
-            // 
-            // nazwiskoStWod
-            // 
-            this.nazwiskoStWod.DataPropertyName = "nazwisko";
-            this.nazwiskoStWod.HeaderText = "Nazwisko";
-            this.nazwiskoStWod.Name = "nazwiskoStWod";
-            this.nazwiskoStWod.ReadOnly = true;
-            this.nazwiskoStWod.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
-            this.dataGridViewTextBoxColumn1.Width = 20;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "dataOd";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Data od";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "dataDo";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Data do";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // txtAge
-            // 
-            this.txtAge.DataPropertyName = "netto";
-            this.txtAge.HeaderText = "Netto";
-            this.txtAge.Name = "txtAge";
-            this.txtAge.ReadOnly = true;
-            // 
-            // txtsymbolVat
-            // 
-            this.txtsymbolVat.DataPropertyName = "symbolVat";
-            this.txtsymbolVat.HeaderText = "Stawka vat";
-            this.txtsymbolVat.Name = "txtsymbolVat";
-            this.txtsymbolVat.ReadOnly = true;
-            this.txtsymbolVat.Width = 130;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2097,6 +2255,8 @@ namespace wodomierz
             ((System.ComponentModel.ISupportInitialize)(this.gridPozycjiFaktury)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridFaktury)).EndInit();
             this.tabPage3.ResumeLayout(false);
+            this.grCennik.ResumeLayout(false);
+            this.grCennik.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridCennik)).EndInit();
             this.tabPage5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GridPracownicy)).EndInit();
@@ -2289,11 +2449,25 @@ namespace wodomierz
         private System.Windows.Forms.DataGridViewTextBoxColumn nazwaFirmyStWod;
         private System.Windows.Forms.DataGridViewTextBoxColumn imieStWod;
         private System.Windows.Forms.DataGridViewTextBoxColumn nazwiskoStWod;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn txtAge;
+        private System.Windows.Forms.Button btUsunCennik;
+        private System.Windows.Forms.Button btPoprawCennik;
+        private System.Windows.Forms.Button btDodajCennik;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txtDataOd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txtDataDo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txtNetto;
         private System.Windows.Forms.DataGridViewTextBoxColumn txtsymbolVat;
+        private System.Windows.Forms.GroupBox grCennik;
+        private System.Windows.Forms.DateTimePicker grDatoDo;
+        private System.Windows.Forms.DateTimePicker grDataod;
+        private System.Windows.Forms.TextBox poleVatCennik;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox poleNettoCennik;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button btWrocCennik;
+        private System.Windows.Forms.Button btZapiszCennik;
     }
 }
 

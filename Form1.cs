@@ -30,6 +30,7 @@ namespace wodomierz
             grDodajStanWod.Hide();
             grWybierzKlientaWod.Hide();
             grupaDodajKlient.Hide();
+            grCennik.Hide();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -497,7 +498,7 @@ namespace wodomierz
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
                 DateTime dzis = DateTime.Today;
-                MessageBox.Show(dzis.ToString("yyyy-MM-dd"));
+                //MessageBox.Show(dzis.ToString("yyyy-MM-dd"));
                 sqlCon.Open();
                 SqlCommand sqlCmd = new SqlCommand("select netto from cennikaktualny", sqlCon); 
                 sqlCmd.CommandType = CommandType.Text;
@@ -997,6 +998,94 @@ namespace wodomierz
         private void ustawianieWilekosciTaba(object sender, EventArgs e)
         {
             ustawianieWilekosciTaba();
+        }
+
+        private void btUsunCennik_Click(object sender, EventArgs e)
+        {
+            UsunCennikk();
+        }
+        private void UsunCennikk()
+        {
+            if (gridCennik.CurrentRow.Cells["idC"].Value != DBNull.Value)
+            {
+                if (MessageBox.Show("Czy napewno usunąć zaznaczenie?", "Potwierdzenie", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    Cennik.UsunCennik(Convert.ToInt32(gridCennik.CurrentRow.Cells["idC"].Value));
+                    GridCennik();
+                }
+                else
+                    GridCennik();
+            }
+        }
+
+        private void btDodajCennik_Click(object sender, EventArgs e)
+        {
+            UkryjButCennik();
+            nowyCennik = true;
+        }
+
+        private void UkryjButCennik()
+        {
+            grCennik.Show();
+            btDodajCennik.Hide();
+            btPoprawCennik.Hide();
+            btUsunCennik.Hide();
+            gridCennik.Hide();
+        }
+        private void PokazButCennik()
+        {
+            grCennik.Hide();
+            btDodajCennik.Show();
+            btPoprawCennik.Show();
+            btUsunCennik.Show();
+            gridCennik.Show();
+        }
+
+        private void btWrocCennik_Click(object sender, EventArgs e)
+        {
+            PokazButCennik();
+            CzyszczeniePolGrCennik();
+        }
+
+        public int idCennik;
+        bool nowyCennik;
+        private void btPoprawCennik_Click(object sender, EventArgs e)
+        {
+            UkryjButCennik();
+            nowyCennik = false;
+            grDataod.Value = Convert.ToDateTime(gridCennik.CurrentRow.Cells["txtDataOd"].Value);
+            grDatoDo.Value = Convert.ToDateTime(gridCennik.CurrentRow.Cells["txtDataDo"].Value);
+            poleNettoCennik.Text = Convert.ToString(gridCennik.CurrentRow.Cells["txtNetto"].Value);
+            poleVatCennik.Text = Convert.ToString(gridCennik.CurrentRow.Cells["txtsymbolVat"].Value);
+            idCennik = Convert.ToInt32(gridCennik.CurrentRow.Cells["idC"].Value);            
+        }
+
+        private void btZapiszCennik_Click(object sender, EventArgs e)
+        {
+            if (nowyCennik)
+            {
+                PokazButCennik();
+                Cennik.DodajCennik(Convert.ToDateTime(grDataod.Value), Convert.ToDateTime(grDatoDo.Value), Convert.ToDecimal(poleNettoCennik.Text),
+                    Convert.ToInt32(poleVatCennik.Text));
+                CzyszczeniePolGrCennik();
+                GridCennik();
+            }
+            else
+            {
+                PokazButCennik();
+                Cennik.PoprawCennik(idCennik, Convert.ToDateTime(grDataod.Value), Convert.ToDateTime(grDatoDo.Value), Convert.ToDecimal(poleNettoCennik.Text), 
+                    Convert.ToInt32(poleVatCennik.Text));
+                CzyszczeniePolGrCennik();
+                GridCennik();
+            }
+
+        }
+        private void CzyszczeniePolGrCennik()
+        {
+            grDataod.Value = Convert.ToDateTime("2020-05-01");
+            grDatoDo.Value = Convert.ToDateTime("2020-06-01");
+            poleNettoCennik.Text = "";
+            poleVatCennik.Text = "";
         }
     }
 }
