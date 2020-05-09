@@ -363,7 +363,8 @@ namespace wodomierz
                 //MessageBox.Show(nrTejFaktury);
                 //nrFaktury = gridFaktury.SelectedRows[0].Cells["nrFaktury"].Value.ToString();
                 Faktura.UpdateFaktury(poleNrKlienta.Text,poleFormaPlatnosci.Text, nrTejFaktury, wyborTerminu.Value
-                    , Convert.ToDecimal(poleNetto.Text), poleStawkaVat.SelectedItem, EmployeeID);
+                    , Convert.ToDecimal(poleNetto.Text), poleStawkaVat.SelectedItem, EmployeeID, toImie, lbAdresKlienta.Text, lbNazwaBanku.Text
+                    , tonazwisko, lbNazwaFirmy.Text, lbTelefon.Text);
             }
             ZapiszFakture();
             GridFaktury();
@@ -1098,6 +1099,58 @@ namespace wodomierz
         {
             MessageBox.Show("Nie baw się bo jeszcze nie działa i popsujesz :).");
             GridFaktury();
+        }
+
+        private void walidacjaNrKlientaFaktury(object sender, CancelEventArgs e)
+        {
+            bool klientIstnieje = false;
+            //poleNrKlienta //id,idKlient,imie,nazwisko,adres,kodPocztowy,nazwaFirmy,telefon FROM klient where idKlient
+            SqlConnection polaczenie = new SqlConnection(connectionString);
+            polaczenie.Open();
+            SqlCommand komendaSQL = polaczenie.CreateCommand();
+            komendaSQL.CommandText = "SELECT count(idKlient) as idKlient FROM klient where idKlient = '" + poleNrKlienta.Text.ToString() + "'";
+            SqlDataReader thisReader = komendaSQL.ExecuteReader();
+
+            while (thisReader.Read())
+            {
+                if (thisReader["idKlient"].ToString() == "1") { klientIstnieje = true; };
+            }
+            thisReader.Close();
+            polaczenie.Close();
+            if (klientIstnieje)
+            {
+                SqlConnection polaczenie2 = new SqlConnection(connectionString);
+                SqlCommand komendaSQL2 = polaczenie2.CreateCommand();
+                polaczenie2.Open();
+                komendaSQL2.CommandText = "SELECT id,idKlient,imie,nazwisko,adres,kodPocztowy,nazwaFirmy,telefon FROM klient where idKlient = '" + poleNrKlienta.Text.ToString() + "'";
+                SqlDataReader thisReader2 = komendaSQL2.ExecuteReader();
+                while (thisReader2.Read())
+                {
+
+                    thisReader2["id"].ToString();
+                    thisReader2["idKlient"].ToString();
+                    toImie = thisReader2["imie"].ToString();
+                    tonazwisko = thisReader2["nazwisko"].ToString();
+                    lbNazwaKlienta.Text = toImie + " " + tonazwisko;
+                    lbAdresKlienta.Text = thisReader2["adres"].ToString();
+                    thisReader2["kodPocztowy"].ToString();
+                    lbNazwaFirmy.Text = thisReader2["nazwaFirmy"].ToString();
+                    lbTelefon.Text = thisReader2["telefon"].ToString();
+                }
+            thisReader2.Close();
+            polaczenie2.Close();
+            }
+            else
+            {
+            MessageBox.Show("Nie ma takiego klienta w bazie.");
+                poleNrKlienta.Text = "";
+                btWybierKlientaDoFaktury_Click(null, null);
+            }
+
+
+
+
+
         }
     }
 }

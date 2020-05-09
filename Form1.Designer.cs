@@ -32,7 +32,7 @@ namespace wodomierz
         public void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button1 = new System.Windows.Forms.Button();
             this.haslo = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -1044,8 +1044,8 @@ namespace wodomierz
             // wskazanieWodomierz
             // 
             this.wskazanieWodomierz.DataPropertyName = "wskazanieWodomierza";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.wskazanieWodomierz.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.wskazanieWodomierz.DefaultCellStyle = dataGridViewCellStyle5;
             this.wskazanieWodomierz.HeaderText = "Stan wodomierza";
             this.wskazanieWodomierz.Name = "wskazanieWodomierz";
             this.wskazanieWodomierz.ReadOnly = true;
@@ -1117,9 +1117,9 @@ namespace wodomierz
             this.grupaWybWodFakt.Controls.Add(this.btWybWod);
             this.grupaWybWodFakt.Controls.Add(this.btWrocWod);
             this.grupaWybWodFakt.Controls.Add(this.gridWyborWodomierz);
-            this.grupaWybWodFakt.Location = new System.Drawing.Point(115, 94);
+            this.grupaWybWodFakt.Location = new System.Drawing.Point(115, 95);
             this.grupaWybWodFakt.Name = "grupaWybWodFakt";
-            this.grupaWybWodFakt.Size = new System.Drawing.Size(617, 227);
+            this.grupaWybWodFakt.Size = new System.Drawing.Size(620, 230);
             this.grupaWybWodFakt.TabIndex = 29;
             this.grupaWybWodFakt.TabStop = false;
             this.grupaWybWodFakt.Text = "Wybierz wodomierz do faktury";
@@ -1201,7 +1201,7 @@ namespace wodomierz
             this.grWyboruKlientaDoFaktury.Controls.Add(this.dataGridView1);
             this.grWyboruKlientaDoFaktury.Controls.Add(this.btWrocWyborKlientaDoFaktury);
             this.grWyboruKlientaDoFaktury.Controls.Add(this.btWybierzKlientaDoFaktury);
-            this.grWyboruKlientaDoFaktury.Location = new System.Drawing.Point(124, 63);
+            this.grWyboruKlientaDoFaktury.Location = new System.Drawing.Point(125, 60);
             this.grWyboruKlientaDoFaktury.Name = "grWyboruKlientaDoFaktury";
             this.grWyboruKlientaDoFaktury.Size = new System.Drawing.Size(600, 200);
             this.grWyboruKlientaDoFaktury.TabIndex = 29;
@@ -1461,6 +1461,7 @@ namespace wodomierz
             this.poleNrKlienta.Name = "poleNrKlienta";
             this.poleNrKlienta.Size = new System.Drawing.Size(99, 22);
             this.poleNrKlienta.TabIndex = 19;
+            this.poleNrKlienta.Validating += new System.ComponentModel.CancelEventHandler(this.walidacjaNrKlientaFaktury);
             // 
             // label5
             // 
