@@ -32,7 +32,7 @@ namespace wodomierz
         public void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button1 = new System.Windows.Forms.Button();
             this.haslo = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -331,6 +331,7 @@ namespace wodomierz
             this.tabControl1.Size = new System.Drawing.Size(1017, 492);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 9;
+            this.tabControl1.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.WybranyTab);
             // 
             // tabPage1
             // 
@@ -1044,8 +1045,8 @@ namespace wodomierz
             // wskazanieWodomierz
             // 
             this.wskazanieWodomierz.DataPropertyName = "wskazanieWodomierza";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.wskazanieWodomierz.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.wskazanieWodomierz.DefaultCellStyle = dataGridViewCellStyle2;
             this.wskazanieWodomierz.HeaderText = "Stan wodomierza";
             this.wskazanieWodomierz.Name = "wskazanieWodomierz";
             this.wskazanieWodomierz.ReadOnly = true;
@@ -1412,9 +1413,6 @@ namespace wodomierz
             // poleStawkaVat
             // 
             this.poleStawkaVat.FormattingEnabled = true;
-            this.poleStawkaVat.Items.AddRange(new object[] {
-            "22",
-            "23"});
             this.poleStawkaVat.Location = new System.Drawing.Point(756, 50);
             this.poleStawkaVat.Name = "poleStawkaVat";
             this.poleStawkaVat.Size = new System.Drawing.Size(121, 24);

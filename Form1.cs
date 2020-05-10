@@ -392,7 +392,7 @@ namespace wodomierz
                 sqlCmd.Parameters.AddWithValue("@telefon", lbTelefon.Text.Length == 0 ? "" : lbTelefon.Text);
                 sqlCmd.Parameters.AddWithValue("@terminPlatnosci", wyborTerminu.Value);
                 sqlCmd.Parameters.AddWithValue("@netto", poleNetto.Text.Length == 0 ? Convert.ToDecimal(0) : Convert.ToDecimal(poleNetto.Text));
-                sqlCmd.Parameters.AddWithValue("@symbolVat", poleStawkaVat.SelectedItem);
+                sqlCmd.Parameters.AddWithValue("@symbolVat", Convert.ToInt32(poleStawkaVat.SelectedValue));
                 sqlCmd.Parameters.AddWithValue("@idPrac", EmployeeID);
                 sqlCmd.ExecuteNonQuery();
                 //PopulateDataGridView();dataGridView1.SelectedRows[0].Cells["nazwa2"].Value.ToString() + " " + dataGridView1.SelectedRows[0].Cells["nazwaFirmy1"].Value.ToString();
@@ -417,6 +417,7 @@ namespace wodomierz
             DodawanieFaktury();
             nowyInsert = true;
             CzyscPolaFaktury();
+            pozwolZmieniacTaby = true;
         }
         private void DodawanieFaktury()
         {
@@ -1148,10 +1149,48 @@ namespace wodomierz
                 btWybierKlientaDoFaktury_Click(null, null);
             }
 
+        }
+        bool pozwolZmieniacTaby = false;
+        private void WybranyTab(object sender, TabControlCancelEventArgs e)
+        {
+            if (pozwolZmieniacTaby) //420
+            {
+                if (tabControl1.SelectedIndex.ToString() == "2")
+                {
+                BindData();
+                }
+                if (tabControl1.SelectedIndex.ToString() == "3")
+                {
+                    BindData();
+                }
+                //MessageBox.Show(tabControl1.SelectedIndex.ToString());
 
+            }
+            else {
+                //MessageBox.Show("Test");
+                //BindData();
+            }
+        }
 
-
-
+        //poleStawkaVat
+        public void BindData()
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["wodomierz"].ConnectionString;
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            {
+                sqlCon.Open();
+                string strCmd = "select symbolVat from cennik";
+                SqlCommand cmd = new SqlCommand(strCmd, sqlCon);
+                SqlDataAdapter da = new SqlDataAdapter(strCmd, sqlCon);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                poleStawkaVat.DataSource = dt;
+                poleStawkaVat.DisplayMember = "symbolVat";
+                poleStawkaVat.ValueMember = "symbolVat";
+                poleStawkaVat.Enabled = true;
+                cmd.ExecuteNonQuery();
+                sqlCon.Close();
+            }
         }
     }
 }
