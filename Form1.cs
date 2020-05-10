@@ -734,6 +734,7 @@ namespace wodomierz
             poleNrSeryjny.Text = "";
             poleWskazanieWod.Text = "";
             nowyStanWod = true;
+            dodajKlientaStanWod.Enabled = true;
         }
 
         private void gridWyborWodomierz_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -823,8 +824,8 @@ namespace wodomierz
             poleDataOdczytuWod.Value = Convert.ToDateTime(gridWodomierz.SelectedRows[0].Cells["dataOdczytu"].Value);
             grDodajStanWod.Show();
             //ukrywanie przycisku
-            dodajKlientaStanWod.Hide();
             UkryjPrzyciskiStanWod();
+            dodajKlientaStanWod.Enabled = false;
         }
 
         private void btUsunStanWod_Click(object sender, EventArgs e)

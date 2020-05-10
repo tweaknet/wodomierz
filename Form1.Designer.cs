@@ -32,7 +32,7 @@ namespace wodomierz
         public void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button1 = new System.Windows.Forms.Button();
             this.haslo = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -1044,8 +1044,8 @@ namespace wodomierz
             // wskazanieWodomierz
             // 
             this.wskazanieWodomierz.DataPropertyName = "wskazanieWodomierza";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.wskazanieWodomierz.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.wskazanieWodomierz.DefaultCellStyle = dataGridViewCellStyle1;
             this.wskazanieWodomierz.HeaderText = "Stan wodomierza";
             this.wskazanieWodomierz.Name = "wskazanieWodomierz";
             this.wskazanieWodomierz.ReadOnly = true;
@@ -1107,7 +1107,7 @@ namespace wodomierz
             this.grPozFaktur.Controls.Add(this.gridPozycjiFaktury);
             this.grPozFaktur.Location = new System.Drawing.Point(56, 59);
             this.grPozFaktur.Name = "grPozFaktur";
-            this.grPozFaktur.Size = new System.Drawing.Size(899, 368);
+            this.grPozFaktur.Size = new System.Drawing.Size(890, 368);
             this.grPozFaktur.TabIndex = 8;
             this.grPozFaktur.TabStop = false;
             this.grPozFaktur.Text = "Dane faktury nr xxx";
