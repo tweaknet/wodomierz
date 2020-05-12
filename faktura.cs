@@ -62,6 +62,31 @@ namespace wodomierz
             return Convert.ToString(Convert.ToInt32(nrNowejFaktury) + 1);
         }
 
+        public static decimal tenWynik;
+        public static decimal ObliczZuzycieWody(string idKlient, string idWodomierz)
+        {
+            decimal wynik;
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+                //using (SqlConnection conn = new SqlConnection(getConnectionString()))
+            {
+                sqlCon.Open();
+                SqlCommand sqlCmd = new SqlCommand("ObliczZuzycieWody", sqlCon);
+                    //cmd.CommandText = parameterStatement.getQuery();
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+
+                sqlCmd.Parameters.AddWithValue("@idKlient", idKlient);
+                sqlCmd.Parameters.AddWithValue("@idWodomierz", idWodomierz);
+
+                    var returnParameter = sqlCmd.Parameters.Add("@ReturnVal", SqlDbType.Decimal);
+                    returnParameter.Direction = ParameterDirection.Output;
+
+                sqlCmd.ExecuteNonQuery();
+                    decimal result = Convert.ToDecimal(returnParameter.Value);
+                wynik = result;
+            }
+            tenWynik = wynik;
+            return wynik;
+        }
 
     }
 }

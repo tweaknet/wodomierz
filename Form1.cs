@@ -535,7 +535,8 @@ namespace wodomierz
         private void button15_Click(object sender, EventArgs e)
         {
             PobierzAktualnaStawkeZaWode();
-            poleIlosc.Text = "21";//TODO obliczać zużycie wody
+            Faktura.ObliczZuzycieWody("1", "1");
+            poleIlosc.Text = Faktura.tenWynik.ToString();// "21";//TODO obliczać zużycie wody
             poleNetto.Text = Convert.ToString(Convert.ToInt32(poleIlosc.Text) * cena);
         }
 
