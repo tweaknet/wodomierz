@@ -362,8 +362,8 @@ namespace wodomierz
             {
                 //MessageBox.Show(nrTejFaktury);
                 //nrFaktury = gridFaktury.SelectedRows[0].Cells["nrFaktury"].Value.ToString();
-                Faktura.UpdateFaktury(poleNrKlienta.Text,poleFormaPlatnosci.Text, nrTejFaktury, wyborTerminu.Value
-                    , Convert.ToDecimal(poleNetto.Text), poleStawkaVat.SelectedItem, EmployeeID, toImie, lbAdresKlienta.Text, lbNazwaBanku.Text
+                Faktura.UpdateFaktury(poleNrKlienta.Text,poleFormaPlatnosci.Text.ToString(), nrTejFaktury, wyborTerminu.Value
+                    , Convert.ToDecimal(poleNetto.Text), Convert.ToInt32(poleStawkaVat.SelectedValue), EmployeeID, toImie, lbAdresKlienta.Text, lbNazwaBanku.Text
                     , tonazwisko, lbNazwaFirmy.Text, lbTelefon.Text);
             }
             ZapiszFakture();
@@ -414,6 +414,7 @@ namespace wodomierz
         private string nrNowejFaktury;
         private void btDodajFakture_Click(object sender, EventArgs e)
         {
+            BindData();
             DodawanieFaktury();
             nowyInsert = true;
             CzyscPolaFaktury();
@@ -534,15 +535,33 @@ namespace wodomierz
         }
         private void button15_Click(object sender, EventArgs e)
         {
-            PobierzAktualnaStawkeZaWode();
-            Faktura.ObliczZuzycieWody("1", "1");
-            poleIlosc.Text = Faktura.tenWynik.ToString();// "21";//TODO obliczać zużycie wody
-            poleNetto.Text = Convert.ToString(Convert.ToInt32(poleIlosc.Text) * cena);
+            if(poleIlosc.Text == "")
+            {
+                PobierzAktualnaStawkeZaWode();
+                Faktura.ObliczZuzycieWody(poleNrKlienta.Text, poleNrWodomierza.Text);
+                if(Faktura.tenWynik == 0)
+                {
+                    MessageBox.Show("Klient nie posiada nierozliczonych wpisów");
+                }
+                else
+                {
+                poleIlosc.Text = Faktura.tenWynik.ToString();// "21";//TODO obliczać zużycie wody
+                poleNetto.Text = Convert.ToString(Convert.ToDecimal(poleIlosc.Text) * cena);
+                }
+
+            }
+            else
+            {
+                PobierzAktualnaStawkeZaWode();
+                poleNetto.Text = Convert.ToString(Convert.ToDecimal(poleIlosc.Text) * cena);
+            }
+
         }
 
         private void btPoprawFakture_Click(object sender, EventArgs e)
         {
             PoprawFakture();
+            BindData();
         }
         string nrTejFaktury;
         public void PoprawFakture()

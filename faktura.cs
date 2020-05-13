@@ -14,7 +14,7 @@ namespace wodomierz
     {
         static string connectionString = ConfigurationManager.ConnectionStrings["wodomierz"].ConnectionString;
         public static void UpdateFaktury(string idKlient, string formaPlatnosci, string nrTejFaktury
-            , DateTime wyborTerminu, decimal poleNetto, object poleStawkaVat, string EmployeeID, string toImie, string lbAdresKlienta, string lbNazwaBanku
+            , DateTime wyborTerminu, decimal poleNetto, int poleStawkaVat, string EmployeeID, string toImie, string lbAdresKlienta, string lbNazwaBanku
             , string tonazwisko, string nazwaFirmy, string telefon)
         {
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
@@ -81,11 +81,20 @@ namespace wodomierz
                     returnParameter.Direction = ParameterDirection.Output;
 
                 sqlCmd.ExecuteNonQuery();
+                if(returnParameter.Value == DBNull.Value)
+                {
+                    tenWynik = 0;
+                }
+                else
+                {
                     decimal result = Convert.ToDecimal(returnParameter.Value);
-                wynik = result;
+                    wynik = result;
+                    tenWynik = result;
+                }
+                    
             }
-            tenWynik = wynik;
-            return wynik;
+            //tenWynik = wynik;
+            return tenWynik;
         }
 
     }
