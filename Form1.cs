@@ -397,6 +397,12 @@ namespace wodomierz
                 sqlCmd.ExecuteNonQuery();
                 //PopulateDataGridView();dataGridView1.SelectedRows[0].Cells["nazwa2"].Value.ToString() + " " + dataGridView1.SelectedRows[0].Cells["nazwaFirmy1"].Value.ToString();
                 //GridCennik();
+                SqlCommand sqlupwod = new SqlCommand("OznaczJakoRozliczone", sqlCon);
+                sqlupwod.CommandType = CommandType.StoredProcedure;
+                sqlupwod.Parameters.AddWithValue("@nrFaktury", nrNowejFaktury);
+                sqlupwod.Parameters.AddWithValue("@idKlient", Convert.ToInt32(poleNrKlienta.Text));
+                sqlupwod.Parameters.AddWithValue("@idWodomierz", Convert.ToInt32(poleNrWodomierza.Text));
+                sqlupwod.ExecuteNonQuery();
             }
             //MessageBox.Show("inseert");
             //MessageBox.Show(EmployeeID);
@@ -723,6 +729,7 @@ namespace wodomierz
             poleNrKlientaStWod.Text = gridWodomierz.SelectedRows[0].Cells["idKlientWodomierz"].Value.ToString();
             poleNrWod.Text = gridWodomierz.SelectedRows[0].Cells["idwodomierz1"].Value.ToString();
             poleNrSeryjny.Text = gridWodomierz.SelectedRows[0].Cells["nrIdentyfikacyjny"].Value.ToString();
+            StanWodomierza.OstatniOdczytWodomierza(Convert.ToInt32(poleNrKlientaStWod.Text), Convert.ToInt32(poleNrWod.Text));
             grDodajStanWod.Show();
             //ukrywanie przycisku
             dodajKlientaStanWod.Hide();
@@ -1210,6 +1217,15 @@ namespace wodomierz
                 poleStawkaVat.Enabled = true;
                 cmd.ExecuteNonQuery();
                 sqlCon.Close();
+            }
+        }
+
+        private void walidacjaZuzyciaWody(object sender, CancelEventArgs e)
+        {
+            if (Convert.ToDecimal(poleWskazanieWod.Text) <= StanWodomierza.tenwskazanieWodomierza)
+            {
+                MessageBox.Show("Wpisano zły odczyt wodomierza. ostatni wprowadzony odczyt to: " + StanWodomierza.tenwskazanieWodomierza.ToString());
+                poleWskazanieWod.Text = "";
             }
         }
     }

@@ -49,6 +49,33 @@ namespace wodomierz
                 //GridCennik();
             }
         }
+        public static decimal tenwskazanieWodomierza;
+        public static decimal OstatniOdczytWodomierza(int idKlient, int idWodomierz)
+        {
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            {
+                    sqlCon.Open();
+                    SqlCommand sqlCmd = new SqlCommand("OstatniOdczytWodomierza", sqlCon);
+                    sqlCmd.CommandType = CommandType.StoredProcedure;
 
+                    sqlCmd.Parameters.AddWithValue("@idKlient", idKlient);
+                    sqlCmd.Parameters.AddWithValue("@idWodomierz", idWodomierz);
+
+                    var returnParameter = sqlCmd.Parameters.Add("@ReturnVal", SqlDbType.Decimal);
+                    returnParameter.Direction = ParameterDirection.Output;
+
+                    sqlCmd.ExecuteNonQuery();
+                    if (returnParameter.Value == DBNull.Value)
+                    {
+                    tenwskazanieWodomierza = 0;
+                    }
+                    else
+                    {
+                        decimal result = Convert.ToDecimal(returnParameter.Value);
+                    tenwskazanieWodomierza = result;
+                    }
+                }
+                return tenwskazanieWodomierza;
+        }
     }
 }
