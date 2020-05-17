@@ -489,10 +489,15 @@ namespace wodomierz
                     using (SqlConnection sqlCon = new SqlConnection(connectionString))
                     {
                         sqlCon.Open();
+                        SqlCommand sqlCmd2 = new SqlCommand("cofnijRozliczenieStWod", sqlCon);
+                        sqlCmd2.CommandType = CommandType.StoredProcedure;
+                        sqlCmd2.Parameters.AddWithValue("@nrfaktury", gridFaktury.CurrentRow.Cells["nrFaktury"].Value);
+                        sqlCmd2.ExecuteNonQuery();
                         SqlCommand sqlCmd = new SqlCommand("usunFakture", sqlCon);
                         sqlCmd.CommandType = CommandType.StoredProcedure;
                         sqlCmd.Parameters.AddWithValue("@nrfaktury", gridFaktury.CurrentRow.Cells["nrFaktury"].Value);
                         sqlCmd.ExecuteNonQuery();
+                        
                         GridFaktury();
                     }
                 }
@@ -687,11 +692,15 @@ namespace wodomierz
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
                 sqlCon.Open();
-                SqlDataAdapter sqlwod = new SqlDataAdapter("SELECT idWodomierz,nrIdentyfikacyjny,wskazanieWodomierza,dataOdczytu FROM wodomierz where idklient = " + poleNrKlienta.Text, sqlCon);
+                SqlDataAdapter sqlwod = new SqlDataAdapter("SELECT idWodomierz,nrIdentyfikacyjny,wskazanieWodomierza,dataOdczytu FROM wodomierz where rozliczona = 0 and idklient = " + poleNrKlienta.Text, sqlCon);
                 //TODO ograniczenie wodomierzy tylko do wybranego klienta
                 DataTable wodomierz = new DataTable();
                 sqlwod.Fill(wodomierz);
                 gridWyborWodomierz.DataSource = wodomierz;
+                if(wodomierz.Rows.Count == 0)
+                {
+                    btWybWod.Enabled = false;
+                }
             }
         }
 
@@ -711,6 +720,7 @@ namespace wodomierz
         private void btWrocWod_Click(object sender, EventArgs e)
         {
             grupaWybWodFakt.Hide();
+            btWybWod.Enabled = true;
         }
 
         private void btWybWod_Click(object sender, EventArgs e)
@@ -721,6 +731,7 @@ namespace wodomierz
         {
             grupaWybWodFakt.Hide();
             poleNrWodomierza.Text = gridWyborWodomierz.SelectedRows[0].Cells["idWodomierz2"].Value.ToString();
+            btWybWod.Enabled = true;
         }
         int nrid;
         private void btDodajStanWod_Click(object sender, EventArgs e)
@@ -729,7 +740,6 @@ namespace wodomierz
             poleNrKlientaStWod.Text = gridWodomierz.SelectedRows[0].Cells["idKlientWodomierz"].Value.ToString();
             poleNrWod.Text = gridWodomierz.SelectedRows[0].Cells["idwodomierz1"].Value.ToString();
             poleNrSeryjny.Text = gridWodomierz.SelectedRows[0].Cells["nrIdentyfikacyjny"].Value.ToString();
-            StanWodomierza.OstatniOdczytWodomierza(Convert.ToInt32(poleNrKlientaStWod.Text), Convert.ToInt32(poleNrWod.Text));
             grDodajStanWod.Show();
             //ukrywanie przycisku
             dodajKlientaStanWod.Hide();
@@ -829,6 +839,7 @@ namespace wodomierz
                 }
                 btWrocDodajStanWod_Click(null, null);
                 nowyStanWod = false;
+                StanWodomierza.tenwskazanieWodomierza = -1;
             }
         }
 
@@ -1222,11 +1233,16 @@ namespace wodomierz
 
         private void walidacjaZuzyciaWody(object sender, CancelEventArgs e)
         {
-            if (Convert.ToDecimal(poleWskazanieWod.Text) <= StanWodomierza.tenwskazanieWodomierza)
+            if (poleWskazanieWod.Text.Length != 0)
             {
-                MessageBox.Show("Wpisano zły odczyt wodomierza. ostatni wprowadzony odczyt to: " + StanWodomierza.tenwskazanieWodomierza.ToString());
-                poleWskazanieWod.Text = "";
+                StanWodomierza.OstatniOdczytWodomierza(Convert.ToInt32(poleNrKlientaStWod.Text), Convert.ToInt32(poleNrWod.Text));
+                    if (Convert.ToDecimal(poleWskazanieWod.Text) <= StanWodomierza.tenwskazanieWodomierza)
+                    {
+                        MessageBox.Show("Wpisano zły odczyt wodomierza. ostatni wprowadzony odczyt to: " + StanWodomierza.tenwskazanieWodomierza.ToString());
+                        poleWskazanieWod.Text = "";
+                    }
             }
         }
+
     }
 }

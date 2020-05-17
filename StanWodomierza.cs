@@ -67,7 +67,7 @@ namespace wodomierz
                     sqlCmd.ExecuteNonQuery();
                     if (returnParameter.Value == DBNull.Value)
                     {
-                    tenwskazanieWodomierza = 0;
+                    tenwskazanieWodomierza = -1;
                     }
                     else
                     {
