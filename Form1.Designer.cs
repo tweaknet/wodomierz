@@ -32,7 +32,7 @@ namespace wodomierz
         public void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button1 = new System.Windows.Forms.Button();
             this.haslo = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -104,12 +104,6 @@ namespace wodomierz
             this.poleDataOdczytuWod = new System.Windows.Forms.DateTimePicker();
             this.dodajKlientaStanWod = new System.Windows.Forms.Button();
             this.gridWodomierz = new System.Windows.Forms.DataGridView();
-            this.idwodomierz = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idKlientWodomierz = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idWodomierz1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nrIdentyfikacyjny = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.wskazanieWodomierz = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataOdczytu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.grPozFaktur = new System.Windows.Forms.GroupBox();
             this.grupaWybWodFakt = new System.Windows.Forms.GroupBox();
@@ -229,6 +223,13 @@ namespace wodomierz
             this.nazwa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idklient1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idwodomierz = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idKlientWodomierz = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idWodomierz1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nrIdentyfikacyjny = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wskazanieWodomierz = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataOdczytu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rozliczona = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.grupaDodajKlient.SuspendLayout();
@@ -997,7 +998,8 @@ namespace wodomierz
             this.idWodomierz1,
             this.nrIdentyfikacyjny,
             this.wskazanieWodomierz,
-            this.dataOdczytu});
+            this.dataOdczytu,
+            this.rozliczona});
             this.gridWodomierz.GridColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.gridWodomierz.Location = new System.Drawing.Point(7, 7);
             this.gridWodomierz.MultiSelect = false;
@@ -1010,56 +1012,6 @@ namespace wodomierz
             this.gridWodomierz.Size = new System.Drawing.Size(994, 420);
             this.gridWodomierz.TabIndex = 11;
             this.gridWodomierz.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.btPoprawStanWod_Click);
-            // 
-            // idwodomierz
-            // 
-            this.idwodomierz.DataPropertyName = "id";
-            this.idwodomierz.HeaderText = "id";
-            this.idwodomierz.Name = "idwodomierz";
-            this.idwodomierz.ReadOnly = true;
-            this.idwodomierz.Visible = false;
-            // 
-            // idKlientWodomierz
-            // 
-            this.idKlientWodomierz.DataPropertyName = "idklient";
-            this.idKlientWodomierz.HeaderText = "Nr klienta";
-            this.idKlientWodomierz.Name = "idKlientWodomierz";
-            this.idKlientWodomierz.ReadOnly = true;
-            this.idKlientWodomierz.Width = 120;
-            // 
-            // idWodomierz1
-            // 
-            this.idWodomierz1.DataPropertyName = "idwodomierz";
-            this.idWodomierz1.HeaderText = "Nr wodomierz";
-            this.idWodomierz1.Name = "idWodomierz1";
-            this.idWodomierz1.ReadOnly = true;
-            this.idWodomierz1.Width = 150;
-            // 
-            // nrIdentyfikacyjny
-            // 
-            this.nrIdentyfikacyjny.DataPropertyName = "nridentyfikacyjny";
-            this.nrIdentyfikacyjny.HeaderText = "Nr seryjny";
-            this.nrIdentyfikacyjny.Name = "nrIdentyfikacyjny";
-            this.nrIdentyfikacyjny.ReadOnly = true;
-            this.nrIdentyfikacyjny.Width = 150;
-            // 
-            // wskazanieWodomierz
-            // 
-            this.wskazanieWodomierz.DataPropertyName = "wskazanieWodomierza";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.wskazanieWodomierz.DefaultCellStyle = dataGridViewCellStyle2;
-            this.wskazanieWodomierz.HeaderText = "Stan wodomierza";
-            this.wskazanieWodomierz.Name = "wskazanieWodomierz";
-            this.wskazanieWodomierz.ReadOnly = true;
-            this.wskazanieWodomierz.Width = 170;
-            // 
-            // dataOdczytu
-            // 
-            this.dataOdczytu.DataPropertyName = "dataOdczytu";
-            this.dataOdczytu.HeaderText = "Data odczytu";
-            this.dataOdczytu.Name = "dataOdczytu";
-            this.dataOdczytu.ReadOnly = true;
-            this.dataOdczytu.Width = 170;
             // 
             // tabPage4
             // 
@@ -2215,6 +2167,64 @@ namespace wodomierz
             this.id_.Name = "id_";
             this.id_.Visible = false;
             // 
+            // idwodomierz
+            // 
+            this.idwodomierz.DataPropertyName = "id";
+            this.idwodomierz.HeaderText = "id";
+            this.idwodomierz.Name = "idwodomierz";
+            this.idwodomierz.ReadOnly = true;
+            this.idwodomierz.Visible = false;
+            // 
+            // idKlientWodomierz
+            // 
+            this.idKlientWodomierz.DataPropertyName = "idklient";
+            this.idKlientWodomierz.HeaderText = "Nr klienta";
+            this.idKlientWodomierz.Name = "idKlientWodomierz";
+            this.idKlientWodomierz.ReadOnly = true;
+            this.idKlientWodomierz.Width = 120;
+            // 
+            // idWodomierz1
+            // 
+            this.idWodomierz1.DataPropertyName = "idwodomierz";
+            this.idWodomierz1.HeaderText = "Nr wodomierz";
+            this.idWodomierz1.Name = "idWodomierz1";
+            this.idWodomierz1.ReadOnly = true;
+            this.idWodomierz1.Width = 150;
+            // 
+            // nrIdentyfikacyjny
+            // 
+            this.nrIdentyfikacyjny.DataPropertyName = "nridentyfikacyjny";
+            this.nrIdentyfikacyjny.HeaderText = "Nr seryjny";
+            this.nrIdentyfikacyjny.Name = "nrIdentyfikacyjny";
+            this.nrIdentyfikacyjny.ReadOnly = true;
+            this.nrIdentyfikacyjny.Width = 150;
+            // 
+            // wskazanieWodomierz
+            // 
+            this.wskazanieWodomierz.DataPropertyName = "wskazanieWodomierza";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.wskazanieWodomierz.DefaultCellStyle = dataGridViewCellStyle1;
+            this.wskazanieWodomierz.HeaderText = "Stan wodomierza";
+            this.wskazanieWodomierz.Name = "wskazanieWodomierz";
+            this.wskazanieWodomierz.ReadOnly = true;
+            this.wskazanieWodomierz.Width = 170;
+            // 
+            // dataOdczytu
+            // 
+            this.dataOdczytu.DataPropertyName = "dataOdczytu";
+            this.dataOdczytu.HeaderText = "Data odczytu";
+            this.dataOdczytu.Name = "dataOdczytu";
+            this.dataOdczytu.ReadOnly = true;
+            this.dataOdczytu.Width = 170;
+            // 
+            // rozliczona
+            // 
+            this.rozliczona.DataPropertyName = "rozliczona";
+            this.rozliczona.HeaderText = "rozliczona";
+            this.rozliczona.Name = "rozliczona";
+            this.rozliczona.ReadOnly = true;
+            this.rozliczona.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2367,12 +2377,6 @@ namespace wodomierz
         private System.Windows.Forms.DataGridViewTextBoxColumn nrIdentyfikacyjny1;
         private System.Windows.Forms.DataGridViewTextBoxColumn wskazanieWodomierza;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataOdczytu1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idwodomierz;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idKlientWodomierz;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idWodomierz1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nrIdentyfikacyjny;
-        private System.Windows.Forms.DataGridViewTextBoxColumn wskazanieWodomierz;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataOdczytu;
         private System.Windows.Forms.Button btUsunStanWod;
         private System.Windows.Forms.Button btDodajNowyStanWod;
         private System.Windows.Forms.GroupBox grDodajStanWod;
@@ -2472,6 +2476,13 @@ namespace wodomierz
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button btWrocCennik;
         private System.Windows.Forms.Button btZapiszCennik;
+        private DataGridViewTextBoxColumn idwodomierz;
+        private DataGridViewTextBoxColumn idKlientWodomierz;
+        private DataGridViewTextBoxColumn idWodomierz1;
+        private DataGridViewTextBoxColumn nrIdentyfikacyjny;
+        private DataGridViewTextBoxColumn wskazanieWodomierz;
+        private DataGridViewTextBoxColumn dataOdczytu;
+        private DataGridViewTextBoxColumn rozliczona;
     }
 }
 

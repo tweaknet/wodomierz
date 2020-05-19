@@ -368,6 +368,7 @@ namespace wodomierz
             }
             ZapiszFakture();
             GridFaktury();
+            GridWodomierz();
         }
 
 
@@ -479,6 +480,7 @@ namespace wodomierz
         private void btUsunFakture_Click(object sender, EventArgs e)
         {
             UsunFakture();
+            GridWodomierz();
         }
         private void UsunFakture()
         {
@@ -664,7 +666,7 @@ namespace wodomierz
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
                 sqlCon.Open();
-                SqlDataAdapter sqlwodomierz = new SqlDataAdapter("SELECT id, idKlient, idWodomierz, nrIdentyfikacyjny, wskazanieWodomierza, dataOdczytu FROM wodomierz", sqlCon);
+                SqlDataAdapter sqlwodomierz = new SqlDataAdapter("SELECT id, idKlient, idWodomierz, nrIdentyfikacyjny, wskazanieWodomierza, dataOdczytu, rozliczona FROM wodomierz", sqlCon);
                 DataTable wodomierz = new DataTable();
                 sqlwodomierz.Fill(wodomierz);
                 gridWodomierz.DataSource = wodomierz;
@@ -845,7 +847,15 @@ namespace wodomierz
 
         private void btPoprawStanWod_Click(object sender, EventArgs e)
         {
-            PoprawStanWodomierz();
+            if (gridWodomierz.CurrentRow.Cells["rozliczona"].Value.ToString() == "False")
+            {
+                PoprawStanWodomierz();
+            }
+            else
+            {
+                MessageBox.Show("Nie można poprawić rozliczonego wpisu.\nUsuń fakturę rozliczającą i popraw wpis.");
+            }
+               
         }
 
         private void PoprawStanWodomierz()
@@ -874,7 +884,7 @@ namespace wodomierz
 
         private void UsunStanWod()
         {
-            if (gridWodomierz.CurrentRow.Cells["idwodomierz"].Value != DBNull.Value)
+            if (gridWodomierz.CurrentRow.Cells["rozliczona"].Value.ToString() == "False")
             {
                 if (MessageBox.Show("Czy napewno usunąć zaznaczenie?", "Potwierdzenie", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
@@ -892,7 +902,7 @@ namespace wodomierz
                     GridFaktury();
             }
             else
-                MessageBox.Show("123Test2");
+                MessageBox.Show("Nie można usunąć rozliczonego wpisu.\nUsuń fakturę rozliczającą i usuń wpis.");
         }
 
         private void btPoprawStanWod_Click(object sender, DataGridViewCellEventArgs e)
