@@ -884,7 +884,7 @@ namespace wodomierz
 
         private void UsunStanWod()
         {
-            if (gridWodomierz.CurrentRow.Cells["rozliczona"].Value.ToString() == "False")
+            if (gridWodomierz.CurrentRow.Cells["rozliczona"].Value.ToString() == "False" & gridWodomierz.CurrentRow.Cells["wskazanieWodomierz"].Value.ToString() == "0.00")
             {
                 if (MessageBox.Show("Czy napewno usunąć zaznaczenie?", "Potwierdzenie", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
