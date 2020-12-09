@@ -21,9 +21,9 @@ namespace wodomierz
         public Form1()
         {
             InitializeComponent();
-            tabControl1.Hide();
+            //pokazuj głównego taba od razu bez logowania
+            tabControl1.Show();
             pWynikLogowania.Show();
-            gridPozycjiFaktury.Hide();
             grPozFaktur.Hide();
             grWyboruKlientaDoFaktury.Hide();
             grupaWybWodFakt.Hide();
@@ -166,7 +166,7 @@ namespace wodomierz
         {
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'logowanie.pracownik' . Możesz go przenieść lub usunąć.
             //this.pracownikTableAdapter.Fill(this.logowanie.pracownik);
-            PopulatePositionComboBox();
+            //PopulatePositionComboBox();
             PopulateDataGridView();
             GridCennik();
             GridFaktury();
@@ -226,23 +226,23 @@ namespace wodomierz
         //    }
         //}
 
-        void PopulatePositionComboBox()
-        {
-            using (SqlConnection sqlCon = new SqlConnection(connectionString))
-            {
-                sqlCon.Open();
-                SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT * FROM Position", sqlCon);
-                DataTable dtbl = new DataTable();
-                sqlDa.Fill(dtbl);
-                //cbxPosition.ValueMember = "PositionID";
-                //cbxPosition.DisplayMember = "Position";
-                DataRow topItem = dtbl.NewRow();
-                topItem[0] = 0;
-                topItem[1] = "-Select-";
-                dtbl.Rows.InsertAt(topItem, 0);
-                //cbxPosition.DataSource = dtbl;
-            }
-        }
+        //void PopulatePositionComboBox()
+        //{
+        //    using (SqlConnection sqlCon = new SqlConnection(connectionString))
+        //    {
+        //        sqlCon.Open();
+        //        SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT * FROM Position", sqlCon);
+        //        DataTable dtbl = new DataTable();
+        //        sqlDa.Fill(dtbl);
+        //        //cbxPosition.ValueMember = "PositionID";
+        //        //cbxPosition.DisplayMember = "Position";
+        //        DataRow topItem = dtbl.NewRow();
+        //        topItem[0] = 0;
+        //        topItem[1] = "-Select-";
+        //        dtbl.Rows.InsertAt(topItem, 0);
+        //        //cbxPosition.DataSource = dtbl;
+        //    }
+        //}
         private void gridPracownicy_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             if (GridPracownicy.CurrentRow != null)
@@ -284,6 +284,11 @@ namespace wodomierz
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
                 e.Handled = true;
+        }
+        private void EnterLoguj(Object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '\r')
+                Loguj();
         }
 
         private void gridPracownicy_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
@@ -411,7 +416,6 @@ namespace wodomierz
         private void btWrocFaktura_Click(object sender, EventArgs e)
         {
             PokazButtonNaNaleznosci();
-            gridPozycjiFaktury.Hide();
             GridFaktury();
             gridFaktury.Show();
             grPozFaktur.Hide();
@@ -454,7 +458,7 @@ namespace wodomierz
             //zapis do bazy
             //ukrycie
             grPozFaktur.Hide();
-            gridPozycjiFaktury.Hide();
+            //gridPozycjiFaktury.Hide();
             //pokazanie
             gridFaktury.Show();
             PokazButtonNaNaleznosci();
@@ -581,7 +585,7 @@ namespace wodomierz
         {
             string nrFaktury;
             UkryjButtonNaNaleznosci();
-            gridPozycjiFaktury.Show();
+            //gridPozycjiFaktury.Show();
             gridFaktury.Hide();
             nowyInsert = false;
             nrFaktury = gridFaktury.SelectedRows[0].Cells["nrFaktury"].Value.ToString();

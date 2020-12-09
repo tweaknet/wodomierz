@@ -32,7 +32,10 @@ namespace wodomierz
         public void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.button1 = new System.Windows.Forms.Button();
             this.haslo = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -104,6 +107,13 @@ namespace wodomierz
             this.poleDataOdczytuWod = new System.Windows.Forms.DateTimePicker();
             this.dodajKlientaStanWod = new System.Windows.Forms.Button();
             this.gridWodomierz = new System.Windows.Forms.DataGridView();
+            this.idwodomierz = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idKlientWodomierz = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idWodomierz1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nrIdentyfikacyjny = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wskazanieWodomierz = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataOdczytu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rozliczona = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.grPozFaktur = new System.Windows.Forms.GroupBox();
             this.grupaWybWodFakt = new System.Windows.Forms.GroupBox();
@@ -151,8 +161,6 @@ namespace wodomierz
             this.label1 = new System.Windows.Forms.Label();
             this.btWrocFaktura = new System.Windows.Forms.Button();
             this.btZapiszFakture = new System.Windows.Forms.Button();
-            this.gridPozycjiFaktury = new System.Windows.Forms.DataGridView();
-            this.idd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataFiltra = new System.Windows.Forms.DateTimePicker();
             this.btFiltr = new System.Windows.Forms.Button();
             this.btUsunFakture = new System.Windows.Forms.Button();
@@ -223,13 +231,8 @@ namespace wodomierz
             this.nazwa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idklient1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idwodomierz = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idKlientWodomierz = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idWodomierz1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nrIdentyfikacyjny = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.wskazanieWodomierz = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataOdczytu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rozliczona = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.grupaDodajKlient.SuspendLayout();
@@ -246,7 +249,6 @@ namespace wodomierz
             ((System.ComponentModel.ISupportInitialize)(this.gridWyborWodomierz)).BeginInit();
             this.grWyboruKlientaDoFaktury.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridPozycjiFaktury)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridFaktury)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.grCennik.SuspendLayout();
@@ -257,6 +259,7 @@ namespace wodomierz
             ((System.ComponentModel.ISupportInitialize)(this.logowanie)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pracownikBindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -264,7 +267,8 @@ namespace wodomierz
             this.button1.Location = new System.Drawing.Point(321, 60);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
+            this.button1.TabIndex = 2;
+            this.button1.TabStop = false;
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -276,13 +280,14 @@ namespace wodomierz
             this.haslo.Size = new System.Drawing.Size(174, 20);
             this.haslo.TabIndex = 1;
             this.haslo.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.haslo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EnterLoguj);
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(72, 34);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(174, 20);
-            this.textBox1.TabIndex = 2;
+            this.textBox1.TabIndex = 0;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // pLogin
@@ -348,7 +353,7 @@ namespace wodomierz
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1009, 462);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Klienci";
+            this.tabPage1.Text = "Zlecenia";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // grupaDodajKlient
@@ -686,6 +691,7 @@ namespace wodomierz
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.chart1);
             this.tabPage2.Controls.Add(this.btUsunStanWod);
             this.tabPage2.Controls.Add(this.btPoprawStanWod);
             this.tabPage2.Controls.Add(this.btDodajNowyStanWod);
@@ -697,7 +703,7 @@ namespace wodomierz
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1009, 462);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Stany wodomierzy";
+            this.tabPage2.Text = "Pomiary";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // btUsunStanWod
@@ -765,7 +771,7 @@ namespace wodomierz
             this.grDodajStanWod.Controls.Add(this.dodajKlientaStanWod);
             this.grDodajStanWod.Location = new System.Drawing.Point(9, 42);
             this.grDodajStanWod.Name = "grDodajStanWod";
-            this.grDodajStanWod.Size = new System.Drawing.Size(992, 373);
+            this.grDodajStanWod.Size = new System.Drawing.Size(699, 373);
             this.grDodajStanWod.TabIndex = 14;
             this.grDodajStanWod.TabStop = false;
             this.grDodajStanWod.Text = "Dodaj stan wodomierza";
@@ -946,7 +952,7 @@ namespace wodomierz
             // btWrocDodajStanWod
             // 
             this.btWrocDodajStanWod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btWrocDodajStanWod.Location = new System.Drawing.Point(829, 344);
+            this.btWrocDodajStanWod.Location = new System.Drawing.Point(536, 344);
             this.btWrocDodajStanWod.Name = "btWrocDodajStanWod";
             this.btWrocDodajStanWod.Size = new System.Drawing.Size(75, 23);
             this.btWrocDodajStanWod.TabIndex = 4;
@@ -957,7 +963,7 @@ namespace wodomierz
             // btZapiszStanWod
             // 
             this.btZapiszStanWod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btZapiszStanWod.Location = new System.Drawing.Point(910, 344);
+            this.btZapiszStanWod.Location = new System.Drawing.Point(617, 344);
             this.btZapiszStanWod.Name = "btZapiszStanWod";
             this.btZapiszStanWod.Size = new System.Drawing.Size(75, 23);
             this.btZapiszStanWod.TabIndex = 3;
@@ -1013,6 +1019,64 @@ namespace wodomierz
             this.gridWodomierz.TabIndex = 11;
             this.gridWodomierz.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.btPoprawStanWod_Click);
             // 
+            // idwodomierz
+            // 
+            this.idwodomierz.DataPropertyName = "id";
+            this.idwodomierz.HeaderText = "id";
+            this.idwodomierz.Name = "idwodomierz";
+            this.idwodomierz.ReadOnly = true;
+            this.idwodomierz.Visible = false;
+            // 
+            // idKlientWodomierz
+            // 
+            this.idKlientWodomierz.DataPropertyName = "idklient";
+            this.idKlientWodomierz.HeaderText = "Nr klienta";
+            this.idKlientWodomierz.Name = "idKlientWodomierz";
+            this.idKlientWodomierz.ReadOnly = true;
+            this.idKlientWodomierz.Width = 120;
+            // 
+            // idWodomierz1
+            // 
+            this.idWodomierz1.DataPropertyName = "idwodomierz";
+            this.idWodomierz1.HeaderText = "Nr wodomierz";
+            this.idWodomierz1.Name = "idWodomierz1";
+            this.idWodomierz1.ReadOnly = true;
+            this.idWodomierz1.Width = 150;
+            // 
+            // nrIdentyfikacyjny
+            // 
+            this.nrIdentyfikacyjny.DataPropertyName = "nridentyfikacyjny";
+            this.nrIdentyfikacyjny.HeaderText = "Nr seryjny";
+            this.nrIdentyfikacyjny.Name = "nrIdentyfikacyjny";
+            this.nrIdentyfikacyjny.ReadOnly = true;
+            this.nrIdentyfikacyjny.Width = 150;
+            // 
+            // wskazanieWodomierz
+            // 
+            this.wskazanieWodomierz.DataPropertyName = "wskazanieWodomierza";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.wskazanieWodomierz.DefaultCellStyle = dataGridViewCellStyle3;
+            this.wskazanieWodomierz.HeaderText = "Stan wodomierza";
+            this.wskazanieWodomierz.Name = "wskazanieWodomierz";
+            this.wskazanieWodomierz.ReadOnly = true;
+            this.wskazanieWodomierz.Width = 170;
+            // 
+            // dataOdczytu
+            // 
+            this.dataOdczytu.DataPropertyName = "dataOdczytu";
+            this.dataOdczytu.HeaderText = "Data odczytu";
+            this.dataOdczytu.Name = "dataOdczytu";
+            this.dataOdczytu.ReadOnly = true;
+            this.dataOdczytu.Width = 170;
+            // 
+            // rozliczona
+            // 
+            this.rozliczona.DataPropertyName = "rozliczona";
+            this.rozliczona.HeaderText = "rozliczona";
+            this.rozliczona.Name = "rozliczona";
+            this.rozliczona.ReadOnly = true;
+            this.rozliczona.Visible = false;
+            // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.grPozFaktur);
@@ -1027,7 +1091,7 @@ namespace wodomierz
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage4.Size = new System.Drawing.Size(1009, 462);
             this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Należności";
+            this.tabPage4.Text = "Konfig pomiarów";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // grPozFaktur
@@ -1058,7 +1122,6 @@ namespace wodomierz
             this.grPozFaktur.Controls.Add(this.label1);
             this.grPozFaktur.Controls.Add(this.btWrocFaktura);
             this.grPozFaktur.Controls.Add(this.btZapiszFakture);
-            this.grPozFaktur.Controls.Add(this.gridPozycjiFaktury);
             this.grPozFaktur.Location = new System.Drawing.Point(56, 59);
             this.grPozFaktur.Name = "grPozFaktur";
             this.grPozFaktur.Size = new System.Drawing.Size(890, 368);
@@ -1493,24 +1556,6 @@ namespace wodomierz
             this.btZapiszFakture.UseVisualStyleBackColor = true;
             this.btZapiszFakture.Click += new System.EventHandler(this.btZapiszFakture_Click);
             // 
-            // gridPozycjiFaktury
-            // 
-            this.gridPozycjiFaktury.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridPozycjiFaktury.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idd});
-            this.gridPozycjiFaktury.Location = new System.Drawing.Point(14, 272);
-            this.gridPozycjiFaktury.Name = "gridPozycjiFaktury";
-            this.gridPozycjiFaktury.RowHeadersVisible = false;
-            this.gridPozycjiFaktury.Size = new System.Drawing.Size(55, 85);
-            this.gridPozycjiFaktury.TabIndex = 7;
-            this.gridPozycjiFaktury.Visible = false;
-            // 
-            // idd
-            // 
-            this.idd.DataPropertyName = "id";
-            this.idd.HeaderText = "id";
-            this.idd.Name = "idd";
-            // 
             // dataFiltra
             // 
             this.dataFiltra.AllowDrop = true;
@@ -1720,7 +1765,7 @@ namespace wodomierz
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(1009, 462);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Cennik";
+            this.tabPage3.Text = "Konfig grupy";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // grCennik
@@ -2027,7 +2072,7 @@ namespace wodomierz
             this.button7.Location = new System.Drawing.Point(956, 525);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(15, 15);
-            this.button7.TabIndex = 2;
+            this.button7.TabIndex = 6;
             this.button7.Text = "P";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
@@ -2167,63 +2212,27 @@ namespace wodomierz
             this.id_.Name = "id_";
             this.id_.Visible = false;
             // 
-            // idwodomierz
+            // idd
             // 
-            this.idwodomierz.DataPropertyName = "id";
-            this.idwodomierz.HeaderText = "id";
-            this.idwodomierz.Name = "idwodomierz";
-            this.idwodomierz.ReadOnly = true;
-            this.idwodomierz.Visible = false;
+            this.idd.DataPropertyName = "id";
+            this.idd.HeaderText = "id";
+            this.idd.Name = "idd";
             // 
-            // idKlientWodomierz
+            // chart1
             // 
-            this.idKlientWodomierz.DataPropertyName = "idklient";
-            this.idKlientWodomierz.HeaderText = "Nr klienta";
-            this.idKlientWodomierz.Name = "idKlientWodomierz";
-            this.idKlientWodomierz.ReadOnly = true;
-            this.idKlientWodomierz.Width = 120;
-            // 
-            // idWodomierz1
-            // 
-            this.idWodomierz1.DataPropertyName = "idwodomierz";
-            this.idWodomierz1.HeaderText = "Nr wodomierz";
-            this.idWodomierz1.Name = "idWodomierz1";
-            this.idWodomierz1.ReadOnly = true;
-            this.idWodomierz1.Width = 150;
-            // 
-            // nrIdentyfikacyjny
-            // 
-            this.nrIdentyfikacyjny.DataPropertyName = "nridentyfikacyjny";
-            this.nrIdentyfikacyjny.HeaderText = "Nr seryjny";
-            this.nrIdentyfikacyjny.Name = "nrIdentyfikacyjny";
-            this.nrIdentyfikacyjny.ReadOnly = true;
-            this.nrIdentyfikacyjny.Width = 150;
-            // 
-            // wskazanieWodomierz
-            // 
-            this.wskazanieWodomierz.DataPropertyName = "wskazanieWodomierza";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.wskazanieWodomierz.DefaultCellStyle = dataGridViewCellStyle1;
-            this.wskazanieWodomierz.HeaderText = "Stan wodomierza";
-            this.wskazanieWodomierz.Name = "wskazanieWodomierz";
-            this.wskazanieWodomierz.ReadOnly = true;
-            this.wskazanieWodomierz.Width = 170;
-            // 
-            // dataOdczytu
-            // 
-            this.dataOdczytu.DataPropertyName = "dataOdczytu";
-            this.dataOdczytu.HeaderText = "Data odczytu";
-            this.dataOdczytu.Name = "dataOdczytu";
-            this.dataOdczytu.ReadOnly = true;
-            this.dataOdczytu.Width = 170;
-            // 
-            // rozliczona
-            // 
-            this.rozliczona.DataPropertyName = "rozliczona";
-            this.rozliczona.HeaderText = "rozliczona";
-            this.rozliczona.Name = "rozliczona";
-            this.rozliczona.ReadOnly = true;
-            this.rozliczona.Visible = false;
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(725, 62);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(276, 365);
+            this.chart1.TabIndex = 15;
+            this.chart1.Text = "chart1";
             // 
             // Form1
             // 
@@ -2266,7 +2275,6 @@ namespace wodomierz
             ((System.ComponentModel.ISupportInitialize)(this.gridWyborWodomierz)).EndInit();
             this.grWyboruKlientaDoFaktury.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridPozycjiFaktury)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridFaktury)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.grCennik.ResumeLayout(false);
@@ -2279,6 +2287,7 @@ namespace wodomierz
             ((System.ComponentModel.ISupportInitialize)(this.pracownikBindingSource)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2321,8 +2330,6 @@ namespace wodomierz
         private System.Windows.Forms.DataGridView GridPracownicy;
         private System.Windows.Forms.DataGridView gridCennik;
         private System.Windows.Forms.DataGridView gridFaktury;
-        private System.Windows.Forms.DataGridView gridPozycjiFaktury;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idd;
         private System.Windows.Forms.GroupBox grPozFaktur;
         private System.Windows.Forms.Button btZapiszFakture;
         private System.Windows.Forms.Button btWrocFaktura;
@@ -2483,6 +2490,8 @@ namespace wodomierz
         private DataGridViewTextBoxColumn wskazanieWodomierz;
         private DataGridViewTextBoxColumn dataOdczytu;
         private DataGridViewTextBoxColumn rozliczona;
+        private DataGridViewTextBoxColumn idd;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }
 
